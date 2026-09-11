@@ -104,7 +104,7 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A docuseries following one football team through a season, narrated by Jill Scott."
+        "A docuseries following one football team through a season, narrated by Jill Scott. The same people turn up in every episode, so you find out what happens to them."
       ],
       [
         "A company that did it",
@@ -145,7 +145,7 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A television commercial. New cast, new setting, new joke, same closing line."
+        "A television commercial. New cast, new setting, new joke, same closing line. Nobody in it ever appears twice, so there is nobody to follow."
       ],
       [
         "A company that did it",
@@ -391,7 +391,7 @@ window.ROUNDS = [
     "quote": "\"Gen Z audiences and younger are social natives, they spend less time watching TV, than any other age group, so a large proportion of our target audience were simply not as familiar with the Specsavers' brand.\" \"what was once a celebrated slogan, SGTS, that had worked wonders ATL, wasn't working for this audience, it was seen as the 'ultimate dad gag'.\"",
     "cite": "The Drum, from the campaign's award entry, 13 November 2024",
     "url": "https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team",
-    "teach": "Repeating is not the same as returning. People come back for a cast and a world, not for a line.",
+    "teach": "A line repeating is not the same as a cast returning. People grow fond of a cast, and come back to see what happens to them next. A line gives them nothing to grow fond of.",
     "why": {
       "question": "A commercial asks for thirty seconds. Why did people give this five minutes an episode?",
       "options": [
@@ -401,7 +401,7 @@ window.ROUNDS = [
         },
         {
           "side": "bestWorst",
-          "text": "The same team came back every episode, so there was something to follow rather than a joke to catch."
+          "text": "People came to know the team, so every new episode was a chance to see what happened to them next."
         },
         {
           "side": "sgts",

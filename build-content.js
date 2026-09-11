@@ -34,7 +34,7 @@ const SIDES = {
   bestWorst: { id: 'best-worst-team', name: 'Specsavers, The Best Worst Team', officialChannel: true,
     scale: 'Long-Form Episodic · Docuseries', title: 'One team, one season, the same faces every episode',
     video: { id: 'NdL2VYNYpQE', label: "There's More to Cwm, Specsavers' Best Worst Team, Series 2, Episode 1", caption: "There's More to Cwm &middot; Specsavers' Best Worst Team" },
-    spec: [['Format', 'A docuseries following one football team through a season, narrated by Jill Scott.'], ['A company that did it', 'Specsavers, The Best Worst Team. Eight parts, on its own channel.'], ['Episode length', '10-20 minutes per episode']],
+    spec: [['Format', 'A docuseries following one football team through a season, narrated by Jill Scott. The same people turn up in every episode, so you find out what happens to them.'], ['A company that did it', 'Specsavers, The Best Worst Team. Eight parts, on its own channel.'], ['Episode length', '10-20 minutes per episode']],
     // Watch time leads, not views. A view count on a brand's channel largely reports what the
     // brand paid to promote; minutes watched reports what someone chose to give it. Since this
     // rung is about format, the honest evidence is that people sat through five minutes of it.
@@ -43,7 +43,7 @@ const SIDES = {
   sgts: { id: 'sgts-tv', name: 'Specsavers, "Should\'ve gone to Specsavers"', officialChannel: true,
     scale: 'Commercial · One spot, a line that ran twenty years', title: 'A new world every time, held together by one line',
     video: { id: 'OMQiJojeryw', label: "Should've Gone To Specsavers 2024 TV Advert", caption: "Should've Gone To Specsavers, 2024 &middot; Specsavers" },
-    spec: [['Format', 'A television commercial. New cast, new setting, new joke, same closing line.'], ['A company that did it', 'Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team.'], ['Episode length', 'One film']],
+    spec: [['Format', 'A television commercial. New cast, new setting, new joke, same closing line. Nobody in it ever appears twice, so there is nobody to follow.'], ['A company that did it', 'Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team.'], ['Episode length', 'One film']],
     stats: [['30 sec', 'How Long It Asks For'], ['20 yrs', 'The Line Has Run'], ['New cast', 'Every Single Time']],
     note: 'Published on Specsavers\' own channel on 1 February 2024. This campaign ran for twenty years and built one of the best known lines in Britain, which is exactly the point of the round: it passes the repetition test and the round still turns on something else. No view count is shown on either card here, because a view count on a brand channel largely reports what the brand paid to promote. Minutes watched is the fairer measure, and it is on the other card.' },
 
@@ -98,10 +98,14 @@ const ROUNDS = [
     sides: ['bestWorst', 'sgts'], winner: 'bestWorst', measure: 'the one people gave real time to',
     quote: '"Gen Z audiences and younger are social natives, they spend less time watching TV, than any other age group, so a large proportion of our target audience were simply not as familiar with the Specsavers\' brand." "what was once a celebrated slogan, SGTS, that had worked wonders ATL, wasn\'t working for this audience, it was seen as the \'ultimate dad gag\'."',
     cite: 'The Drum, from the campaign\'s award entry, 13 November 2024', url: 'https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team',
-    teach: 'Repeating is not the same as returning. People come back for a cast and a world, not for a line.',
+    // Tom and Evan pinned this distinction down on the 11 September call and asked for it to be
+    // said plainly, because it is subtle. Tom: the audience "develops a relationship with" the
+    // character. Evan: they grow fond of them, so the next one arrives and they are looking
+    // forward to seeing what situation that character is in. A line cannot do that.
+    teach: 'A line repeating is not the same as a cast returning. People grow fond of a cast, and come back to see what happens to them next. A line gives them nothing to grow fond of.',
     why: { question: 'A commercial asks for thirty seconds. Why did people give this five minutes an episode?', options: [
       { side: 'sgts', text: 'A line people already know does the work before the film even starts.' },
-      { side: 'bestWorst', text: 'The same team came back every episode, so there was something to follow rather than a joke to catch.' },
+      { side: 'bestWorst', text: 'People came to know the team, so every new episode was a chance to see what happened to them next.' },
       { side: 'sgts', text: 'One spot can run everywhere at once, which a ten-minute episode cannot.' } ] } },
 
   { rung: 'audience', id: 'them-or-you', job: 'Red Bull: the edge of space, or thirty seconds about the can?',
