@@ -17,6 +17,17 @@ const BANNED = [
   { text: 'No film to show', why: 'Evan: every side must be a real film. The poster fallback is gone.' }
 ];
 
+// A TELL is any wording on a card that announces which side loses before the viewer has decided.
+// This is not fussiness. The first build shipped with every losing card labelled "The other way",
+// so a viewer could score full marks without reading anything, which is precisely the criticism
+// Tom made of the previous version: he said he "very quickly was like, oh, it's obviously always
+// the episodic". The page has to make someone think, so the two cards must be described in the
+// same neutral register and the verdict must live only in the reveal.
+const TELLS = [
+  'the other way', 'the old way', 'the wrong way', 'the better way', 'the right way',
+  'what not to do', 'instead of this', 'obviously', 'of course'
+];
+
 function check(SIDES, ROUNDS, COPY, lib) {
   const problems = [];
   const fail = (m) => problems.push(m);
@@ -74,6 +85,22 @@ function check(SIDES, ROUNDS, COPY, lib) {
   const everything = JSON.stringify([SIDES, ROUNDS, COPY]);
   BANNED.forEach((b) => {
     if (everything.indexOf(b.text) !== -1) fail('banned phrase "' + b.text + '" is still present. ' + b.why);
+  });
+
+  // No card may give the answer away before the viewer picks. Only the text a viewer sees on the
+  // pick screen is checked: the scale label, the card title and the three stat captions.
+  Object.keys(SIDES).forEach((k) => {
+    const s = SIDES[k];
+    const onTheCard = [s.scale, s.title]
+      .concat((s.stats || []).map((row) => row[1]))
+      .concat((s.spec || []).map((row) => row[0]))
+      .join(' ')
+      .toLowerCase();
+    TELLS.forEach((t) => {
+      if (onTheCard.indexOf(t) !== -1) {
+        fail('side "' + k + '" gives the answer away on the card with the phrase "' + t + '". Describe both sides in the same neutral register and keep the verdict in the reveal.');
+      }
+    });
   });
 
   // Library blocks are reused exactly. If one needs changing, Tom edits the live card and we

@@ -24,10 +24,10 @@ const SIDES = {
   // ---- Round 1, P&G ----------------------------------------------------------------
   ricos: fromBlock('sitcom-ricos-tacos', { name: "P&G, Rico's Tacos", officialChannel: true }),
   tideSpot: { id: 'tide-school-lunch', name: 'P&G, a Tide commercial', officialChannel: true,
-    scale: 'The other way · One film', title: 'One film about the product, then nothing',
+    scale: 'Commercial · One film', title: 'One film, made about the product',
     video: { id: 'xPHs8yT8cPM', label: 'Tide, School Lunch', caption: 'School Lunch &middot; Tide' },
     spec: [['Format', 'A commercial. One film, about the product, with no next episode.'], ['A company that did it', "P&G, on Tide's own channel, October 2025. The same company that makes Rico's Tacos."], ['Episode length', 'One film']],
-    stats: [['26,840', 'YouTube Views, 11 Sep 2026'], ['1', 'Film'], ['None', 'Next Episode']],
+    stats: [['26,840', 'YouTube Views, 11 Sep 2026'], ['1', 'Film'], ['30 sec', 'Length']],
     note: "Published on Tide's own channel on 15 October 2025. View count read on 11 September 2026. Both sides of this round are P&G, so the company, the budget and the audience are the same and only the approach changes." },
 
   // ---- Round 2, Specsavers ---------------------------------------------------------
@@ -38,7 +38,7 @@ const SIDES = {
     stats: [['23.3M', 'YouTube Views'], ['5 min', 'Average Watch Time'], ['+35%', 'Brand Consideration']],
     note: 'Figures from the campaign\'s award entry as reported by The Drum, 13 November 2024. <a href="https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team" target="_blank" rel="noopener">Source</a>' },
   sgts: { id: 'sgts-tv', name: 'Specsavers, "Should\'ve gone to Specsavers"', officialChannel: true,
-    scale: 'The other way · A line, twenty years of it', title: 'A new world every time, held together by one line',
+    scale: 'Commercial · One spot, a line that ran twenty years', title: 'A new world every time, held together by one line',
     video: { id: 'OMQiJojeryw', label: "Should've Gone To Specsavers 2024 TV Advert", caption: "Should've Gone To Specsavers, 2024 &middot; Specsavers" },
     spec: [['Format', 'A television commercial. New cast, new setting, new joke, same closing line.'], ['A company that did it', 'Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team.'], ['Episode length', 'One film']],
     stats: [['10.5M', 'YouTube Views, 11 Sep 2026'], ['30%', 'Of Gen Z Reached By TV Ads'], ['"Dad gag"', 'What Gen Z Called The Line']],
@@ -52,7 +52,7 @@ const SIDES = {
     stats: [['49,046,929', 'YouTube Views, 11 Sep 2026'], ['8M', 'Watching Live At Once'], ['Free', 'No Sign-Up, No Gate']],
     note: 'More than 8 million concurrent viewers, a YouTube record at the time, reported by The Drum, Forbes and Tubefilter on 14 and 15 October 2012 and confirmed by YouTube. Published on Red Bull\'s own channel on 14 October 2012; view count read on 11 September 2026.' },
   confession: { id: 'confession', name: 'Red Bull, a Gives You Wiiings cartoon', officialChannel: true,
-    scale: 'The other way · Thirty seconds about the can', title: 'The cartoon where somebody drinks the product',
+    scale: 'Commercial · Animated, thirty seconds', title: 'The cartoon where somebody drinks the product',
     video: { id: '0b3OPo9wHuk', label: 'Confession, a 2011 Red Bull cartoon advert', caption: 'Confession, 2011 &middot; Red Bull' },
     spec: [['Format', 'A thirty-second animated commercial, the house style Red Bull ran for years.'], ['A company that did it', 'Red Bull, on its own channel. The same company, the same channel, as the jump.'], ['Episode length', 'Thirty seconds']],
     stats: [['251,520', 'YouTube Views, 11 Sep 2026'], ['30 sec', 'Long'], ['The can', 'What It Is About']],
@@ -61,7 +61,7 @@ const SIDES = {
   // ---- Round 4, Mailchimp ----------------------------------------------------------
   secondAct: fromBlock('docuseries-mailchimp-second-act', { name: 'Mailchimp, Second Act', officialChannel: true }),
   serialRead: { id: 'serial-read', name: 'Mailchimp, sponsoring Serial', officialChannel: false,
-    scale: 'The other way · Renting the audience', title: 'Twenty seconds at the top of somebody else\'s show',
+    scale: 'Sponsorship · A read at the top of the show', title: 'Twenty seconds at the top of somebody else\'s show',
     video: { id: 'GkPZP2NADYg', label: 'The MailKimp read at the top of Serial, a listener\'s upload', caption: 'The MailKimp read, Serial season one &middot; a listener\'s upload' },
     spec: [['Format', 'A sponsor read before the show the listener actually came for. This is the famous MailKimp one.'], ['A company that did it', 'Mailchimp, 2014, before it built its own studio.'], ['Episode length', 'About twenty seconds']],
     stats: [['81%', 'Spike In Mentions, Premiere Week'], ['19%', 'Audible, The Next Best'], ['"Paying rent"', 'What Mailchimp Called It']],
@@ -77,8 +77,8 @@ const ROUNDS = [
     teach: 'A series earns a return visit. A one-off never does.',
     why: { question: 'Why did the show work?', options: [
       { side: 'ricos', text: 'A series gives people a reason to come back, so the attention arrives with trust already attached.' },
-      { side: 'tideSpot', text: 'It had the biggest media budget in grocery.' },
-      { side: 'tideSpot', text: 'It ran as a thirty-second spot in prime time.' } ] } },
+      { side: 'tideSpot', text: 'Thirty seconds in prime time puts it in front of more people at once.' },
+      { side: 'tideSpot', text: 'One polished film costs far less to make than twenty-two episodes.' } ] } },
 
   { rung: 'format', id: 'line-or-cast', job: 'Specsavers: a line everyone knows, or a team they know?',
     lens: ['Consistency Is Key', 'It\'s Not About You. It\'s About Them.'],
@@ -87,9 +87,9 @@ const ROUNDS = [
     cite: 'The Drum, from the campaign\'s award entry, 13 November 2024', url: 'https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team',
     teach: 'Repeating is not the same as returning. People come back for a cast and a world, not for a line.',
     why: { question: 'The line ran for twenty years. Why did the series reach people it could not?', options: [
-      { side: 'sgts', text: 'The line was new to that audience.' },
+      { side: 'sgts', text: 'A line people already know does the work before the ad even starts.' },
       { side: 'bestWorst', text: 'The same team came back every episode, so there was something to follow rather than a joke to catch.' },
-      { side: 'sgts', text: 'Television reached more of Gen Z than YouTube did.' } ] } },
+      { side: 'sgts', text: 'One spot can run everywhere at once, which a ten-minute episode cannot.' } ] } },
 
   { rung: 'audience', id: 'them-or-you', job: 'Red Bull: the edge of space, or thirty seconds about the can?',
     lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'],
@@ -99,8 +99,8 @@ const ROUNDS = [
     teach: 'Give people something they actually want and the brand comes along for the ride.',
     why: { question: 'Both films are Red Bull, on the same channel. Why did one get two hundred times the audience?', options: [
       { side: 'stratos', text: 'It was something people wanted to watch, given away free, with nothing asked in return.' },
-      { side: 'confession', text: 'It showed the can more often than the cartoon did.' },
-      { side: 'confession', text: 'It was pushed harder by the platform.' } ] } },
+      { side: 'confession', text: 'A thirty-second cartoon is cheap enough to run all year.' },
+      { side: 'confession', text: 'Putting the product on screen is what turns attention into sales.' } ] } },
 
   { rung: 'ownership', id: 'own-or-rent', job: 'Mailchimp: make the show, or buy twenty seconds inside one?',
     lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'],
@@ -110,8 +110,8 @@ const ROUNDS = [
     teach: 'Renting gets you in front of people. Owning the show gets you the ones who become customers.',
     why: { question: 'The sponsorship beat every other sponsor on the show. Why did Mailchimp move the money anyway?', options: [
       { side: 'secondAct', text: 'The people its own shows brought in looked like its most valuable customers.' },
-      { side: 'serialRead', text: 'The podcast stopped accepting sponsors.' },
-      { side: 'serialRead', text: 'Sponsorship had become more expensive than making a series.' } ] } }
+      { side: 'serialRead', text: 'A hit show hands you an audience that already trusts the host.' },
+      { side: 'serialRead', text: 'Sponsoring costs less than producing a series of your own.' } ] } }
 ];
 
 const COPY = {

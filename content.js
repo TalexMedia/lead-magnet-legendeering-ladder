@@ -53,8 +53,8 @@ window.SIDES = {
     "id": "tide-school-lunch",
     "name": "P&G, a Tide commercial",
     "officialChannel": true,
-    "scale": "The other way · One film",
-    "title": "One film about the product, then nothing",
+    "scale": "Commercial · One film",
+    "title": "One film, made about the product",
     "video": {
       "id": "xPHs8yT8cPM",
       "label": "Tide, School Lunch",
@@ -84,8 +84,8 @@ window.SIDES = {
         "Film"
       ],
       [
-        "None",
-        "Next Episode"
+        "30 sec",
+        "Length"
       ]
     ],
     "note": "Published on Tide's own channel on 15 October 2025. View count read on 11 September 2026. Both sides of this round are P&G, so the company, the budget and the audience are the same and only the approach changes."
@@ -135,7 +135,7 @@ window.SIDES = {
     "id": "sgts-tv",
     "name": "Specsavers, \"Should've gone to Specsavers\"",
     "officialChannel": true,
-    "scale": "The other way · A line, twenty years of it",
+    "scale": "Commercial · One spot, a line that ran twenty years",
     "title": "A new world every time, held together by one line",
     "video": {
       "id": "OMQiJojeryw",
@@ -217,7 +217,7 @@ window.SIDES = {
     "id": "confession",
     "name": "Red Bull, a Gives You Wiiings cartoon",
     "officialChannel": true,
-    "scale": "The other way · Thirty seconds about the can",
+    "scale": "Commercial · Animated, thirty seconds",
     "title": "The cartoon where somebody drinks the product",
     "video": {
       "id": "0b3OPo9wHuk",
@@ -304,7 +304,7 @@ window.SIDES = {
     "id": "serial-read",
     "name": "Mailchimp, sponsoring Serial",
     "officialChannel": false,
-    "scale": "The other way · Renting the audience",
+    "scale": "Sponsorship · A read at the top of the show",
     "title": "Twenty seconds at the top of somebody else's show",
     "video": {
       "id": "GkPZP2NADYg",
@@ -371,11 +371,11 @@ window.ROUNDS = [
         },
         {
           "side": "tideSpot",
-          "text": "It had the biggest media budget in grocery."
+          "text": "Thirty seconds in prime time puts it in front of more people at once."
         },
         {
           "side": "tideSpot",
-          "text": "It ran as a thirty-second spot in prime time."
+          "text": "One polished film costs far less to make than twenty-two episodes."
         }
       ]
     }
@@ -403,7 +403,7 @@ window.ROUNDS = [
       "options": [
         {
           "side": "sgts",
-          "text": "The line was new to that audience."
+          "text": "A line people already know does the work before the ad even starts."
         },
         {
           "side": "bestWorst",
@@ -411,7 +411,7 @@ window.ROUNDS = [
         },
         {
           "side": "sgts",
-          "text": "Television reached more of Gen Z than YouTube did."
+          "text": "One spot can run everywhere at once, which a ten-minute episode cannot."
         }
       ]
     }
@@ -443,11 +443,11 @@ window.ROUNDS = [
         },
         {
           "side": "confession",
-          "text": "It showed the can more often than the cartoon did."
+          "text": "A thirty-second cartoon is cheap enough to run all year."
         },
         {
           "side": "confession",
-          "text": "It was pushed harder by the platform."
+          "text": "Putting the product on screen is what turns attention into sales."
         }
       ]
     }
@@ -479,11 +479,11 @@ window.ROUNDS = [
         },
         {
           "side": "serialRead",
-          "text": "The podcast stopped accepting sponsors."
+          "text": "A hit show hands you an audience that already trusts the host."
         },
         {
           "side": "serialRead",
-          "text": "Sponsorship had become more expensive than making a series."
+          "text": "Sponsoring costs less than producing a series of your own."
         }
       ]
     }
