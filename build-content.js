@@ -188,8 +188,11 @@ const COPY = {
     'They return for something they want to watch, not for something about the product.',
     'And when you own it, the audience is yours instead of rented by the month.'
   ],
-  synthesisClose: 'Which adds up to one thing. Your own series, made for your audience, with your name on it, that people come back to.',
-  cta: { heading: 'Do you have the team to make it?', copy: 'Most companies have the ideas already. The crew is the part that is missing, and that is the part we do.', button: 'Book A Call With Our Team', url: 'https://calendly.com/talextom/20-min-discovery-call' },
+  // Evan, 11 September: the close should put the four lessons back to the reader as one question
+  // about their own company, and that question should hand straight off to the ask. Each clause
+  // below is one rung, in the order the rounds ran.
+  synthesisClose: 'So here is the question for your own company. Could you make a show that comes back every week or every month, with a format and a cast your audience gets to know? One made for them rather than about you, and owned by you rather than rented from somebody else.',
+  cta: { heading: 'Do you have the team to make it?', copy: 'Most companies get to an idea on their own. The crew is the part that is usually missing, and that is the part we do.', button: 'Book A Call With Our Team', url: 'https://calendly.com/talextom/20-min-discovery-call' },
   share: 'Send this to a colleague', shared: 'Link copied', print: 'Print my result', startOver: 'Start over',
   sample: 'Every round is one company two ways, so nothing here turns on one brand being bigger than another. Every film is real, plays on the page, and links to its source. Figures were read on 11 September 2026 and are dated on each card. The why-answers are prepared by Talex and not yet approved by Tom.',
   ordinals: ['first', 'second']

@@ -557,10 +557,10 @@ window.COPY = {
     "They return for something they want to watch, not for something about the product.",
     "And when you own it, the audience is yours instead of rented by the month."
   ],
-  "synthesisClose": "Which adds up to one thing. Your own series, made for your audience, with your name on it, that people come back to.",
+  "synthesisClose": "So here is the question for your own company. Could you make a show that comes back every week or every month, with a format and a cast your audience gets to know? One made for them rather than about you, and owned by you rather than rented from somebody else.",
   "cta": {
     "heading": "Do you have the team to make it?",
-    "copy": "Most companies have the ideas already. The crew is the part that is missing, and that is the part we do.",
+    "copy": "Most companies get to an idea on their own. The crew is the part that is usually missing, and that is the part we do.",
     "button": "Book A Call With Our Team",
     "url": "https://calendly.com/talextom/20-min-discovery-call"
   },
