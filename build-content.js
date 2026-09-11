@@ -35,14 +35,17 @@ const SIDES = {
     scale: 'Long-Form Episodic · Docuseries', title: 'One team, one season, the same faces every episode',
     video: { id: 'NdL2VYNYpQE', label: "There's More to Cwm, Specsavers' Best Worst Team, Series 2, Episode 1", caption: "There's More to Cwm &middot; Specsavers' Best Worst Team" },
     spec: [['Format', 'A docuseries following one football team through a season, narrated by Jill Scott.'], ['A company that did it', 'Specsavers, The Best Worst Team. Eight parts, on its own channel.'], ['Episode length', '10-20 minutes per episode']],
-    stats: [['23.3M', 'YouTube Views'], ['5 min', 'Average Watch Time'], ['+35%', 'Brand Consideration']],
+    // Watch time leads, not views. A view count on a brand's channel largely reports what the
+    // brand paid to promote; minutes watched reports what someone chose to give it. Since this
+    // rung is about format, the honest evidence is that people sat through five minutes of it.
+    stats: [['5 min', 'Average Watch Time Per Episode'], ['+35%', 'Brand Consideration'], ['23.3M', 'YouTube Views']],
     note: 'Figures from the campaign\'s award entry as reported by The Drum, 13 November 2024. <a href="https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team" target="_blank" rel="noopener">Source</a>' },
   sgts: { id: 'sgts-tv', name: 'Specsavers, "Should\'ve gone to Specsavers"', officialChannel: true,
     scale: 'Commercial · One spot, a line that ran twenty years', title: 'A new world every time, held together by one line',
     video: { id: 'OMQiJojeryw', label: "Should've Gone To Specsavers 2024 TV Advert", caption: "Should've Gone To Specsavers, 2024 &middot; Specsavers" },
     spec: [['Format', 'A television commercial. New cast, new setting, new joke, same closing line.'], ['A company that did it', 'Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team.'], ['Episode length', 'One film']],
-    stats: [['10.5M', 'YouTube Views, 11 Sep 2026'], ['20 yrs', 'The Line Has Run'], ['New cast', 'Every Single Time']],
-    note: 'Reach and the "ultimate dad gag" line from The Drum, 13 November 2024. Published on Specsavers\' own channel on 1 February 2024; view count read on 11 September 2026. This campaign repeated for twenty years and built one of the best known lines in Britain, which is the point of the round: repeating is not the same as returning.' },
+    stats: [['30 sec', 'How Long It Asks For'], ['20 yrs', 'The Line Has Run'], ['New cast', 'Every Single Time']],
+    note: 'Published on Specsavers\' own channel on 1 February 2024. This campaign ran for twenty years and built one of the best known lines in Britain, which is exactly the point of the round: it passes the repetition test and the round still turns on something else. No view count is shown on either card here, because a view count on a brand channel largely reports what the brand paid to promote. Minutes watched is the fairer measure, and it is on the other card.' },
 
   // ---- Round 3, Red Bull -----------------------------------------------------------
   stratos: { id: 'stratos', name: 'Red Bull, the Stratos jump', officialChannel: true,
@@ -92,12 +95,12 @@ const ROUNDS = [
 
   { rung: 'format', id: 'line-or-cast', job: 'Specsavers: a line everyone knows, or a team they know?',
     lens: ['Consistency Is Key', 'It\'s Not About You. It\'s About Them.'],
-    sides: ['bestWorst', 'sgts'], winner: 'bestWorst', measure: 'the one that reached the people the ads could not',
+    sides: ['bestWorst', 'sgts'], winner: 'bestWorst', measure: 'the one people gave real time to',
     quote: '"Gen Z audiences and younger are social natives, they spend less time watching TV, than any other age group, so a large proportion of our target audience were simply not as familiar with the Specsavers\' brand." "what was once a celebrated slogan, SGTS, that had worked wonders ATL, wasn\'t working for this audience, it was seen as the \'ultimate dad gag\'."',
     cite: 'The Drum, from the campaign\'s award entry, 13 November 2024', url: 'https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team',
     teach: 'Repeating is not the same as returning. People come back for a cast and a world, not for a line.',
-    why: { question: 'The line ran for twenty years. Why did the series reach people it could not?', options: [
-      { side: 'sgts', text: 'A line people already know does the work before the ad even starts.' },
+    why: { question: 'A commercial asks for thirty seconds. Why did people give this five minutes an episode?', options: [
+      { side: 'sgts', text: 'A line people already know does the work before the film even starts.' },
       { side: 'bestWorst', text: 'The same team came back every episode, so there was something to follow rather than a joke to catch.' },
       { side: 'sgts', text: 'One spot can run everywhere at once, which a ten-minute episode cannot.' } ] } },
 

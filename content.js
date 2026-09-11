@@ -117,16 +117,16 @@ window.SIDES = {
     ],
     "stats": [
       [
-        "23.3M",
-        "YouTube Views"
-      ],
-      [
         "5 min",
-        "Average Watch Time"
+        "Average Watch Time Per Episode"
       ],
       [
         "+35%",
         "Brand Consideration"
+      ],
+      [
+        "23.3M",
+        "YouTube Views"
       ]
     ],
     "note": "Figures from the campaign's award entry as reported by The Drum, 13 November 2024. <a href=\"https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team\" target=\"_blank\" rel=\"noopener\">Source</a>"
@@ -158,8 +158,8 @@ window.SIDES = {
     ],
     "stats": [
       [
-        "10.5M",
-        "YouTube Views, 11 Sep 2026"
+        "30 sec",
+        "How Long It Asks For"
       ],
       [
         "20 yrs",
@@ -170,7 +170,7 @@ window.SIDES = {
         "Every Single Time"
       ]
     ],
-    "note": "Reach and the \"ultimate dad gag\" line from The Drum, 13 November 2024. Published on Specsavers' own channel on 1 February 2024; view count read on 11 September 2026. This campaign repeated for twenty years and built one of the best known lines in Britain, which is the point of the round: repeating is not the same as returning."
+    "note": "Published on Specsavers' own channel on 1 February 2024. This campaign ran for twenty years and built one of the best known lines in Britain, which is exactly the point of the round: it passes the repetition test and the round still turns on something else. No view count is shown on either card here, because a view count on a brand channel largely reports what the brand paid to promote. Minutes watched is the fairer measure, and it is on the other card."
   },
   "stratos": {
     "id": "stratos",
@@ -387,17 +387,17 @@ window.ROUNDS = [
       "sgts"
     ],
     "winner": "bestWorst",
-    "measure": "the one that reached the people the ads could not",
+    "measure": "the one people gave real time to",
     "quote": "\"Gen Z audiences and younger are social natives, they spend less time watching TV, than any other age group, so a large proportion of our target audience were simply not as familiar with the Specsavers' brand.\" \"what was once a celebrated slogan, SGTS, that had worked wonders ATL, wasn't working for this audience, it was seen as the 'ultimate dad gag'.\"",
     "cite": "The Drum, from the campaign's award entry, 13 November 2024",
     "url": "https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team",
     "teach": "Repeating is not the same as returning. People come back for a cast and a world, not for a line.",
     "why": {
-      "question": "The line ran for twenty years. Why did the series reach people it could not?",
+      "question": "A commercial asks for thirty seconds. Why did people give this five minutes an episode?",
       "options": [
         {
           "side": "sgts",
-          "text": "A line people already know does the work before the ad even starts."
+          "text": "A line people already know does the work before the film even starts."
         },
         {
           "side": "bestWorst",
