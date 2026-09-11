@@ -32,6 +32,17 @@ function check(SIDES, ROUNDS, COPY, lib) {
   const problems = [];
   const fail = (m) => problems.push(m);
 
+  // The page shipped once with source notes and film captions sitting in the data and never being
+  // drawn, while the landing screen told the viewer every film "links to its source". The data
+  // being right is not the same as the viewer seeing it, so check the renderer too.
+  try {
+    const engine = require('fs').readFileSync(require('path').join(__dirname, 'index.html'), 'utf8');
+    if (engine.indexOf('side.note') === -1) fail('the engine never renders side.note, so no card shows where its figures came from');
+    if (engine.indexOf('video.caption') === -1) fail('the engine never renders video.caption, so no card says whose channel the film is on');
+  } catch (e) {
+    fail('could not read index.html to confirm the notes and captions are rendered');
+  }
+
   // The four rungs, in Tom's order, no substitutions.
   if (ROUNDS.length !== RUNGS.length) fail('expected ' + RUNGS.length + ' rounds, found ' + ROUNDS.length);
   ROUNDS.forEach((r, i) => {

@@ -41,7 +41,7 @@ const SIDES = {
     scale: 'Commercial · One spot, a line that ran twenty years', title: 'A new world every time, held together by one line',
     video: { id: 'OMQiJojeryw', label: "Should've Gone To Specsavers 2024 TV Advert", caption: "Should've Gone To Specsavers, 2024 &middot; Specsavers" },
     spec: [['Format', 'A television commercial. New cast, new setting, new joke, same closing line.'], ['A company that did it', 'Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team.'], ['Episode length', 'One film']],
-    stats: [['10.5M', 'YouTube Views, 11 Sep 2026'], ['30%', 'Of Gen Z Reached By TV Ads'], ['"Dad gag"', 'What Gen Z Called The Line']],
+    stats: [['10.5M', 'YouTube Views, 11 Sep 2026'], ['20 yrs', 'The Line Has Run'], ['New cast', 'Every Single Time']],
     note: 'Reach and the "ultimate dad gag" line from The Drum, 13 November 2024. Published on Specsavers\' own channel on 1 February 2024; view count read on 11 September 2026. This campaign repeated for twenty years and built one of the best known lines in Britain, which is the point of the round: repeating is not the same as returning.' },
 
   // ---- Round 3, Red Bull -----------------------------------------------------------
@@ -54,8 +54,8 @@ const SIDES = {
   confession: { id: 'confession', name: 'Red Bull, a Gives You Wiiings cartoon', officialChannel: true,
     scale: 'Commercial · Animated, thirty seconds', title: 'The cartoon where somebody drinks the product',
     video: { id: '0b3OPo9wHuk', label: 'Confession, a 2011 Red Bull cartoon advert', caption: 'Confession, 2011 &middot; Red Bull' },
-    spec: [['Format', 'A thirty-second animated commercial, the house style Red Bull ran for years.'], ['A company that did it', 'Red Bull, on its own channel. The same company, the same channel, as the jump.'], ['Episode length', 'Thirty seconds']],
-    stats: [['251,520', 'YouTube Views, 11 Sep 2026'], ['30 sec', 'Long'], ['The can', 'What It Is About']],
+    spec: [['Format', 'An animated commercial. The same look and the same shape of joke, a new one every time, running from at least 2000 through this 2011 film.'], ['A company that did it', 'Red Bull, on its own channel. The same company and the same channel as the jump.'], ['Episode length', 'Thirty seconds, again and again for years']],
+    stats: [['251,520', 'YouTube Views, 11 Sep 2026'], ['11 yrs', 'Same Format, At Least'], ['The can', 'What It Is About']],
     note: 'Published on Red Bull\'s own channel on 26 January 2011; view count read on 11 September 2026. Both films in this round sit on the same channel, so the two counts are measuring the same thing.' },
 
   // ---- Round 4, Mailchimp ----------------------------------------------------------
@@ -118,7 +118,7 @@ const COPY = {
   brand: 'Talex Media',
   eyebrow: 'A choose your own adventure case study · draft for Tom',
   title: 'Which one worked?',
-  lead: 'Four rounds. Each one is a single company shown two ways, so the budget and the brand are the same on both sides and the only thing that changes is the approach. Pick the one that worked, then say why.',
+  lead: 'Four rounds. Each one is a single company shown two ways, so you are never comparing a big brand against a small one. Pick the one that worked, then say why.',
   gate: '"If you stripped your name and your product off this piece of content, would anyone still want to watch it? If the answer is yes, you have earned the right to put your name back on. If the answer is no, you are making a commercial and calling it content."',
   gateCite: 'Tom Langan, What\'s 100 Years Old is New Again',
   gateUrl: 'https://www.linkedin.com/pulse/whats-100-years-old-new-again-tom-langan-6bm2e',
@@ -160,7 +160,19 @@ const COPY = {
   medalNames: ['Gold', 'Silver'],
   tiers: [ { from: 8, name: 'Perfect read' }, { from: 6, name: 'Sharp eye' }, { from: 0, name: 'First look' } ],
   logRight: 'called it', logMissed: 'missed it', reasonRow: 'Reason',
-  cta: { heading: 'Want your own?', copy: 'Tell us what your video needs to do, and we will talk through which of these fits.', button: 'Book A Call With Our Team', url: 'https://calendly.com/talextom/20-min-discovery-call' },
+  // The four rounds are meant to add up to one sentence in the viewer's own head. This is where
+  // they get added up. Tom, on the call: the viewer should end at "what we really want is to own
+  // our own episodic series that's entertaining for our audience, that is tied to our brand, that
+  // we have control over and that people will come back to watch over and over and over again."
+  synthesisHeading: 'Put the four rounds together',
+  synthesis: [
+    'A single film is watched once. A series gives people a reason to come back.',
+    'Coming back is not enough on its own. A cast and a world are what they come back to.',
+    'They return for something they want to watch, not for something about the product.',
+    'And when you own it, the audience is yours instead of rented by the month.'
+  ],
+  synthesisClose: 'Which adds up to one thing. Your own series, made for your audience, with your name on it, that people come back to.',
+  cta: { heading: 'Do you have the team to make it?', copy: 'Most companies have the ideas already. The crew is the part that is missing, and that is the part we do.', button: 'Book A Call With Our Team', url: 'https://calendly.com/talextom/20-min-discovery-call' },
   share: 'Send this to a colleague', shared: 'Link copied', print: 'Print my result', startOver: 'Start over',
   sample: 'Every round is one company two ways, so nothing here turns on one brand being bigger than another. Every film is real, plays on the page, and links to its source. Figures were read on 11 September 2026 and are dated on each card. The why-answers are prepared by Talex and not yet approved by Tom.',
   ordinals: ['first', 'second']

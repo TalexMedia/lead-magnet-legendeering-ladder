@@ -93,6 +93,18 @@
   .stat .fig{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;line-height:1;color:var(--o);font-variant-numeric:tabular-nums}
   .stat.measure .fig{color:var(--txt);font-size:1.7rem}
   .stat .cap{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+  /* The film caption and the source note. These carry the channel, the date and, where a film is
+     not an official upload, the line that says so. The page claims both on the landing screen, so
+     they have to be on the card. */
+  .filmcap{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:.5rem 1.15rem 0}
+  /* The closing synthesis: the four lessons, added up, then the one sentence they make. */
+  .synthlist{list-style:none;margin:.9rem 0 0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+  .synthlist li{display:flex;gap:.75rem;align-items:flex-start;font-size:1rem;line-height:1.5;opacity:0;animation:rise .5s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:calc(var(--i) * .12s + .2s)}
+  .synthlist .k{flex:none;width:22px;height:22px;border-radius:50%;background:var(--o);color:#fff;font-family:'Oswald',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:.15rem}
+  .synthclose{margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--border);font-family:'EB Garamond',serif;font-style:italic;font-size:1.2rem;line-height:1.45;color:var(--txt)}
+  @media (prefers-reduced-motion:reduce){.synthlist li{opacity:1;animation:none}}
+  .src{font-size:.78rem;line-height:1.5;color:var(--muted);border-top:1px solid var(--border);margin-top:.5rem;padding-top:.6rem}
+  .src a{color:var(--o)}
   .verdict{font-family:'EB Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--txt);margin:1.2rem 0 .4rem}
   .podium{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto 1fr auto;column-gap:1.1rem;align-items:stretch;margin-top:1rem}
   .pcol{display:contents}
@@ -229,7 +241,7 @@
   <footer id="foot"></footer>
 </div>
 
-<script src="content.js?v=e787fdb88f"></script>
+<script src="content.js?v=e2ceaffcba"></script>
 <script>
 (function(){
   'use strict';
@@ -306,11 +318,17 @@
     if (opts.pickable) { c.setAttribute('role', 'button'); c.tabIndex = 0; c.setAttribute('aria-pressed', opts.picked ? 'true' : 'false'); }
     if (opts.place !== undefined) c.appendChild(numeral(opts.place + 1, 'place' + (opts.fresh ? ' fresh' : '')));
     c.appendChild(media(side));
+    /* What the film is and whose channel it is on. Shown from the start, because a viewer deciding
+       between two films is entitled to know that one of them is a listener's copy. */
+    if (side.video && side.video.caption) c.appendChild(html('div', 'filmcap', side.video.caption));
     var body = el('div', 'body');
     body.appendChild(html('div', 'scale', side.scale));
     body.appendChild(el('div', 'name', side.title));
     side.spec.slice(0, 3).forEach(function(row){ var s = el('div', 'spec'); s.appendChild(el('b', null, row[0])); s.appendChild(html('span', null, row[1])); body.appendChild(s); });
     if (opts.stats) { var st = el('div', 'stats'); side.stats.forEach(function(s, i){ var d = el('div', 'stat' + (i === 0 ? ' measure' : '')); d.appendChild(el('div', 'fig', s[0])); d.appendChild(el('div', 'cap', s[1])); st.appendChild(d); }); body.appendChild(st); }
+    /* Where every figure came from, with its link. Held back until the pick is locked so the note
+       cannot tip the answer, but never omitted: the landing screen promises it. */
+    if (opts.stats && side.note) body.appendChild(html('div', 'src', side.note));
     c.appendChild(body); return c;
   }
   var ICON_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>', ICON_NO = '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>', ICON_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg>';
@@ -423,6 +441,15 @@
     main.appendChild(el('p', 'lead', C.resultSub));
     main.appendChild(el('p', 'verdict', S.score >= C.highFrom ? C.resultHigh : C.resultLow));
     R.forEach(function(r, i){ var L = S.log[i]; if (!L) return; var ord = order(r); var blk = el('div', 'roundblock'); blk.appendChild(el('p', 'eyebrow', fill(C.roundLabel, { n:i + 1, total:R.length }))); blk.appendChild(el('h2', null, r.job)); blk.appendChild(podium(r, ord, L.pick, true)); var re = el('div', 'reason'); re.appendChild(el('b', null, C.reasonRow + ':')); re.appendChild(el('span', 'chip ' + (L.gotWhy ? 'ok' : 'no'), L.gotWhy ? C.logRight : C.logMissed)); re.appendChild(el('span', null, r.why.options.filter(function(o){ return o.side === r.winner; })[0].text)); blk.appendChild(re); main.appendChild(blk); });
+    /* The four rounds add up to one sentence. This is where they get added up, before the ask. */
+    if (C.synthesis && C.synthesis.length) {
+      var syn = el('div', 'panel synth'); syn.appendChild(el('p', 'lbl', C.synthesisHeading));
+      var sl = el('ol', 'synthlist');
+      C.synthesis.forEach(function(line, i){ var li = el('li'); li.style.setProperty('--i', i); li.appendChild(el('span', 'k', String(i + 1))); li.appendChild(el('span', null, line)); sl.appendChild(li); });
+      syn.appendChild(sl);
+      syn.appendChild(el('p', 'synthclose', C.synthesisClose));
+      main.appendChild(syn);
+    }
     var cta = el('div', 'cta'); cta.appendChild(el('p', 'eyebrow', C.brand)); cta.appendChild(el('h2', null, C.cta.heading)); cta.appendChild(el('p', null, C.cta.copy));
     /* Booking destination is configuration. Confirm the live link before release. */
     var a = el('a', 'btn', C.cta.button); a.href = C.cta.url; a.target = '_blank'; a.rel = 'noopener'; cta.appendChild(a); main.appendChild(cta);

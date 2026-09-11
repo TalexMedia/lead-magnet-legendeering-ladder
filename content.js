@@ -162,12 +162,12 @@ window.SIDES = {
         "YouTube Views, 11 Sep 2026"
       ],
       [
-        "30%",
-        "Of Gen Z Reached By TV Ads"
+        "20 yrs",
+        "The Line Has Run"
       ],
       [
-        "\"Dad gag\"",
-        "What Gen Z Called The Line"
+        "New cast",
+        "Every Single Time"
       ]
     ],
     "note": "Reach and the \"ultimate dad gag\" line from The Drum, 13 November 2024. Published on Specsavers' own channel on 1 February 2024; view count read on 11 September 2026. This campaign repeated for twenty years and built one of the best known lines in Britain, which is the point of the round: repeating is not the same as returning."
@@ -227,15 +227,15 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A thirty-second animated commercial, the house style Red Bull ran for years."
+        "An animated commercial. The same look and the same shape of joke, a new one every time, running from at least 2000 through this 2011 film."
       ],
       [
         "A company that did it",
-        "Red Bull, on its own channel. The same company, the same channel, as the jump."
+        "Red Bull, on its own channel. The same company and the same channel as the jump."
       ],
       [
         "Episode length",
-        "Thirty seconds"
+        "Thirty seconds, again and again for years"
       ]
     ],
     "stats": [
@@ -244,8 +244,8 @@ window.SIDES = {
         "YouTube Views, 11 Sep 2026"
       ],
       [
-        "30 sec",
-        "Long"
+        "11 yrs",
+        "Same Format, At Least"
       ],
       [
         "The can",
@@ -494,7 +494,7 @@ window.COPY = {
   "brand": "Talex Media",
   "eyebrow": "A choose your own adventure case study · draft for Tom",
   "title": "Which one worked?",
-  "lead": "Four rounds. Each one is a single company shown two ways, so the budget and the brand are the same on both sides and the only thing that changes is the approach. Pick the one that worked, then say why.",
+  "lead": "Four rounds. Each one is a single company shown two ways, so you are never comparing a big brand against a small one. Pick the one that worked, then say why.",
   "gate": "\"If you stripped your name and your product off this piece of content, would anyone still want to watch it? If the answer is yes, you have earned the right to put your name back on. If the answer is no, you are making a commercial and calling it content.\"",
   "gateCite": "Tom Langan, What's 100 Years Old is New Again",
   "gateUrl": "https://www.linkedin.com/pulse/whats-100-years-old-new-again-tom-langan-6bm2e",
@@ -556,9 +556,17 @@ window.COPY = {
   "logRight": "called it",
   "logMissed": "missed it",
   "reasonRow": "Reason",
+  "synthesisHeading": "Put the four rounds together",
+  "synthesis": [
+    "A single film is watched once. A series gives people a reason to come back.",
+    "Coming back is not enough on its own. A cast and a world are what they come back to.",
+    "They return for something they want to watch, not for something about the product.",
+    "And when you own it, the audience is yours instead of rented by the month."
+  ],
+  "synthesisClose": "Which adds up to one thing. Your own series, made for your audience, with your name on it, that people come back to.",
   "cta": {
-    "heading": "Want your own?",
-    "copy": "Tell us what your video needs to do, and we will talk through which of these fits.",
+    "heading": "Do you have the team to make it?",
+    "copy": "Most companies have the ideas already. The crew is the part that is missing, and that is the part we do.",
     "button": "Book A Call With Our Team",
     "url": "https://calendly.com/talextom/20-min-discovery-call"
   },
