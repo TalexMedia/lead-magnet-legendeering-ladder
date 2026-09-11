@@ -25,7 +25,7 @@ Tom's order from the call. Each rung teaches one thing, and they build.
 | 1 | Repetition | Rico's Tacos, twice a week, against a single Tide film | 200,363 views on one episode against 26,840 on the film, both P&G |
 | 2 | Format and theme, not just repeating | The Best Worst Team against twenty years of "Should've gone to Specsavers" | 23.3M views, 5 minutes average watch, brand consideration up 35 percent, The Drum, 13 Nov 2024 |
 | 3 | Audience over product | The Stratos jump against a Gives You Wiiings cartoon | 49,046,929 views against 251,520 on the same Red Bull channel, and 8 million watching the jump live |
-| 4 | Own it, do not rent it | Second Act against the MailKimp read on Serial | Mailchimp moved the money even though the sponsorship beat every other sponsor on the show |
+| 4 | Own it, do not rent it | A YETI Presents film against YETI's name on a PBR bull riding award | 1,368,483 views on YETI's own channel against 13,672 on PBR's, and only one of those audiences belongs to YETI |
 
 Round 2 is the one that makes the ladder work. The Specsavers line repeated for twenty years, so
 it passes round 1's test and still loses round 2. Repeating is not the same as returning.
@@ -45,11 +45,19 @@ View counts were read the same day and are dated on every card. Films play muted
 | 1 | `PeUsXJ4ccXY` / `xPHs8yT8cPM` | MinivelaTV, the media partner / Tide, official |
 | 2 | `NdL2VYNYpQE` / `OMQiJojeryw` | The series' own channel / SpecsaversOfficial |
 | 3 | `FHtvDA0W34I` / `0b3OPo9wHuk` | Red Bull, official, both sides |
-| 4 | `pPdAiYeq7K4` / `GkPZP2NADYg` | VICE TV, the media partner / a listener's upload |
+| 4 | `OmrufRLGdAk` / `6ti-Ky0zYhA` | YETI, official / PBR, official |
 
-One film is not an official upload. Neither Mailchimp nor Serial ever posted the MailKimp read, so
-the card says plainly that it is a listener's copy. Everything else is on the brand's own channel or
-its named media partner.
+Every film is now on the channel of the company that made it. Mailchimp was in round 4 until
+11 September; Tom and Evan both dropped it on the call because the 2014 Serial read was "too far in
+the past", and replacing it also removed the one listener's upload from the page.
+
+Round 4's two films sit on two different channels, and the card says so. That is not a flaw in the
+comparison, it is the thing being compared: one audience belongs to YETI and one belongs to PBR.
+
+Round 4 is weaker than Mailchimp in one respect worth knowing. Mailchimp's head of brand explained
+the switch on the record, so that round could state a reason. YETI has never said anything
+comparable, so this round rests on the structural fact of whose channel the film sits on. The
+trade was recency for a quote, and both of them chose recency.
 
 ## Files
 
@@ -76,6 +84,14 @@ round count, or if either phrase Evan cut ever reappears.
 
 ## Still open
 
+- **Round 2 rests on evidence that argues a slightly different lesson, and this needs Tom.** The
+  rung is meant to teach format: a recurring cast and a consistent world are what people come back
+  to, which a tagline cannot give them. The evidence under it, from The Drum, says something
+  adjacent but not identical: Gen Z "spend less time watching TV, than any other age group, so a
+  large proportion of our target audience were simply not as familiar with the Specsavers' brand."
+  That is closer to a channel argument than a format one, and it overlaps what round 3 teaches.
+  Either the round needs different evidence, or the rung needs rewording to match what the source
+  actually supports. Changing what a rung teaches is Tom's call, not ours, so it is left as is.
 - Tom has not seen the rounds, the why-answers or the takeaways.
 - The language gate has not been run. Copy was deliberately left rough until the format and examples were signed off.
 - The Drum, Digiday and Marketing Dive figures are as cited and should be checked first hand before a prospect sees them.

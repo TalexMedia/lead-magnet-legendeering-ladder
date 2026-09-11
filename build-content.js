@@ -58,19 +58,29 @@ const SIDES = {
     stats: [['251,520', 'YouTube Views, 11 Sep 2026'], ['11 yrs', 'Same Format, At Least'], ['The can', 'What It Is About']],
     note: 'Published on Red Bull\'s own channel on 26 January 2011; view count read on 11 September 2026. Both films in this round sit on the same channel, so the two counts are measuring the same thing.' },
 
-  // ---- Round 4, Mailchimp ----------------------------------------------------------
-  secondAct: fromBlock('docuseries-mailchimp-second-act', { name: 'Mailchimp, Second Act', officialChannel: true }),
-  serialRead: { id: 'serial-read', name: 'Mailchimp, sponsoring Serial', officialChannel: false,
-    scale: 'Sponsorship · A read at the top of the show', title: 'Twenty seconds at the top of somebody else\'s show',
-    video: { id: 'GkPZP2NADYg', label: 'The MailKimp read at the top of Serial, a listener\'s upload', caption: 'The MailKimp read, Serial season one &middot; a listener\'s upload' },
-    spec: [['Format', 'A sponsor read before the show the listener actually came for. This is the famous MailKimp one.'], ['A company that did it', 'Mailchimp, 2014, before it built its own studio.'], ['Episode length', 'About twenty seconds']],
-    stats: [['81%', 'Spike In Mentions, Premiere Week'], ['19%', 'Audible, The Next Best'], ['"Paying rent"', 'What Mailchimp Called It']],
-    note: 'ListenFirst Media data reported by Marketing Dive, 21 December 2015: mentions rose 81 percent around the Serial premiere, ahead of Audible at 19 percent, while Squarespace fell. This sponsorship was a win. Neither Mailchimp nor Serial ever posted the read, so the film here is a listener\'s upload of it.' }
+  // ---- Round 4, YETI ---------------------------------------------------------------
+  // Mailchimp was here until 11 September. Tom and Evan both dropped it on the call for one
+  // reason: the Serial read is "too far in the past". Tom: "I'd be willing to bet that Yeti does
+  // a fair amount of sponsorship of things." He was right. YETI has sponsored PBR since 2013.
+  yetiFilm: { id: 'yeti-presents', name: 'YETI, YETI Presents', officialChannel: true,
+    scale: 'Long-Form Episodic · Documentary', title: 'A film it made, on a channel it owns',
+    video: { id: 'OmrufRLGdAk', label: 'YETI Presents, A Thousand Casts', caption: 'A Thousand Casts &middot; YETI' },
+    spec: [['Format', 'A documentary film series about the people who live the way YETI customers want to live. The product is barely in it.'], ['A company that did it', 'YETI, on its own channel, about a dozen films a year since 2015.'], ['Episode length', 'This one runs 28 minutes']],
+    stats: [['1,368,483', 'YouTube Views, 11 Sep 2026'], ['Since 2015', 'YETI Presents Has Run'], ['Its own', 'Whose Channel It Sits On']],
+    note: 'Published on YETI\'s own channel on 15 August 2023; view count read on 11 September 2026. The two films in this round sit on different channels, which is the whole point of the round rather than a flaw in it: one audience is YETI\'s and one is somebody else\'s.' },
+  pbrSponsor: { id: 'pbr-sponsor', name: 'YETI, sponsoring the PBR bull riding award', officialChannel: true,
+    scale: 'Sponsorship · A name on someone else\'s award', title: 'Its name on an award inside somebody else\'s show',
+    video: { id: '6ti-Ky0zYhA', label: '2026 PBR YETI Bucking Bull Champion Ransom', caption: 'The 2026 PBR YETI Bucking Bull Champion &middot; PBR' },
+    spec: [['Format', 'A season award named after the sponsor, inside coverage that Professional Bull Riders makes and owns.'], ['A company that did it', 'YETI, which first sponsored PBR in 2013 and has sponsored it again since 2017.'], ['Episode length', 'This segment runs 7 minutes']],
+    stats: [['13,672', 'YouTube Views, 11 Sep 2026'], ['Since 2013', 'YETI Has Sponsored PBR'], ['PBR\'s', 'Whose Channel It Sits On']],
+    note: 'Published on PBR\'s own channel on 17 May 2026; view count read on 11 September 2026. The sponsorship history is as reported by Front Office Sports in October 2019. This is a real and long-running sponsorship of a major sport, not a misstep.' }
 };
 
 const ROUNDS = [
   { rung: 'repetition', id: 'once-or-again', job: 'P&G: one film, or a show twice a week?',
-    lens: ['Consistency Is Key', 'Give Without Expectation'],
+    // Evan, on the call with Tom, 11 September: Give Without Expectation comes off round one
+    // "because we want that to come after". It belongs to round three. One rung, one idea.
+    lens: ['Consistency Is Key'],
     sides: ['ricos', 'tideSpot'], winner: 'ricos', measure: 'the one people came back for',
     quote: '"Instead of buying 30 seconds inside someone else\'s show, P&G decided to simply own the program outright." "You need it to be episodic, because a series earns you a return visit and a one off never does." "Attention you earn beats attention you rent every single time, because it arrives with a little trust already attached to it."',
     cite: 'Tom Langan, Welcome to The Taco Drama, 30 July 2026', url: 'https://www.linkedin.com/pulse/welcome-taco-drama-tom-langan-wusce',
@@ -102,16 +112,16 @@ const ROUNDS = [
       { side: 'confession', text: 'A thirty-second cartoon is cheap enough to run all year.' },
       { side: 'confession', text: 'Putting the product on screen is what turns attention into sales.' } ] } },
 
-  { rung: 'ownership', id: 'own-or-rent', job: 'Mailchimp: make the show, or buy twenty seconds inside one?',
+  { rung: 'ownership', id: 'own-or-rent', job: 'YETI: make the film, or put your name on someone else\'s?',
     lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'],
-    sides: ['secondAct', 'serialRead'], winner: 'secondAct', measure: 'the one that brought in the customers worth having',
-    quote: '"It felt like, as long as we\'re sponsoring shows, we\'re paying rent to get in front of people. We\'re interrupting the thing that they want to be engaged with." "They tend to be really, really similar to our most valuable customers," said Mark DiCristina. "They tend to pay us more. They tend to pay us more quickly. They tend to be more engaged."',
-    cite: 'Mark DiCristina, Mailchimp, quoted by Tim Peterson, Digiday, 29 July 2019', url: 'https://digiday.com/future-of-tv/mailchimp-has-cut-back-on-traditional-brand-advertising-to-invest-in-producing-original-shows-podcasts/',
-    teach: 'Renting gets you in front of people. Owning the show gets you the ones who become customers.',
-    why: { question: 'The sponsorship beat every other sponsor on the show. Why did Mailchimp move the money anyway?', options: [
-      { side: 'secondAct', text: 'The people its own shows brought in looked like its most valuable customers.' },
-      { side: 'serialRead', text: 'A hit show hands you an audience that already trusts the host.' },
-      { side: 'serialRead', text: 'Sponsoring costs less than producing a series of your own.' } ] } }
+    sides: ['yetiFilm', 'pbrSponsor'], winner: 'yetiFilm', measure: 'the one whose audience YETI keeps',
+    quote: '"Ransom bucks off Brady Fielder in the Championship Round to become the 2026 PBR YETI Bucking Bull Champion." That is PBR\'s film, on PBR\'s channel, describing PBR\'s award. YETI\'s name is on it for as long as YETI pays for it. YETI Presents started in 2015, two years before the sponsorship resumed, and the two have run alongside each other ever since.',
+    cite: 'PBR, 17 May 2026, and Front Office Sports, October 2019', url: 'https://www.youtube.com/watch?v=6ti-Ky0zYhA',
+    teach: 'Renting puts your name in front of a crowd. Owning the film means the crowd is yours after it ends.',
+    why: { question: 'Both are YETI. Why does the film do more for YETI in the long run?', options: [
+      { side: 'yetiFilm', text: 'It sits on a channel YETI owns, so everyone it brings in stays with YETI afterwards.' },
+      { side: 'pbrSponsor', text: 'A sponsorship puts the name in front of a crowd that has already gathered.' },
+      { side: 'pbrSponsor', text: 'Naming an award costs less than producing a documentary.' } ] } }
 ];
 
 const COPY = {
