@@ -47,6 +47,11 @@
       "id": "38af6dabab36",
       "rule": "long sentence",
       "reason": "The sentence is in the Rico's Tacos source note, which is copied word for word from the approved block library and locked. A block is only changed by editing the live card and re-extracting it, never on this page."
+    },
+    {
+      "id": "72862775784a",
+      "rule": "quantifier needs scope check: only",
+      "reason": "The only instance is \"second only to Jake from State Farm\" in round 2. Checked true against the source: Insurity, via Business Wire on 7 March 2024, put Jake from State Farm first at 34 percent and Allstate's Mayhem second at 31 percent, so exactly one mascot ranked above Mayhem. Added in response to independent review 1, item F12, so the 31 percent does not read as a first place."
     }
   ]
 }

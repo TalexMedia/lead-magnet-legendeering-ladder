@@ -93,10 +93,37 @@ read from YouTube's own `lengthSeconds` on 2026-09-14. Films play muted.
 
 Build, then lint:
 
+One command runs the whole release check and says whether the live copy is still the reviewed copy:
+
 ```bash
-node build-content.js && node extract-copy.js
-python ../../Writing/talex-lint.py copy-deck.md --profile public --adjudications lint-adjudications.json
+node verify-release.js
 ```
+
+It runs the content gate, regenerates the copy deck, runs the Talex lint with the written warning
+decisions, and verifies the review receipt. If it blocks at the receipt after an edit, that is the
+writing system working: any copy change after review voids the receipt, so the changed passage needs a
+fresh independent review and a new receipt.
+
+## The writing system
+
+This page went through the full release sequence in `Writing/README.md` on 2026-09-14. Everything is in
+`review/`:
+
+| File | What it is |
+|---|---|
+| `independent-review-1-2026-09-14.md` | First review of the whole page, by a fresh Fable 5.1 context. 29 findings. |
+| `adjudication-1-2026-09-14.md` | The decision on each of the 29, with the source checked. |
+| `independent-review-final-2026-09-14.md` | Second fresh context, checking every fix. All resolved, no violations. |
+| `adjudication-final-2026-09-14.md` | The decision on its three small points and one note, all fixed. |
+| `independent-review-changed-lines-2026-09-14.md` | Third fresh context, checking the last five lines changed. |
+| `review-record-2026-09-14.md` | All of the above embedded word for word, which the receipt fingerprints. |
+| `review-receipt.json` | The receipt. Verified PASS. |
+
+The receipt refuses to verify if a single character of the copy or of the review record changes. That was
+tested by changing "team" to "crew" in the copy, which blocked, and restoring it, which passed.
+
+The receipt records absolute paths on Evan's machine, which is how `review-receipt.py` is built, so it
+verifies against the workspace copy rather than a fresh clone of the deploy repository.
 
 The gate refuses the build if the rungs are out of Tom's order; if any side has no film; if a
 non-official upload does not say so; if a round names no measure or no dated source; if a round has
@@ -123,13 +150,19 @@ answer away; or if either phrase Evan cut ever reappears.
 
 ## Still open
 
-- Tom has not seen this version, the why-answers or the Allstate round.
-- The landing menu still lists all four headlines and lets a viewer start at any round. The review
-  recommended removing it because it breaks Tom's order. It stays for now because Evan asked for each
-  round to be reachable as its own link on the earlier version. Evan's call.
-- The copy passes the Talex linter with every warning decided in writing. The independent review and
-  receipt required before a prospect sees it have not been recorded.
-- MarketCast, Insurity, The Drum, Tom Langan's editions and Front Office Sports are cited as fetched.
-  The YETI sponsorship history rests on one October 2019 report.
+- Tom has not seen this version, the why-answers or the Allstate round. The landing notice still marks the
+  why-answers as not yet approved by Tom.
+- **Three items for Evan from the writing review**, detailed in `review/adjudication-1-2026-09-14.md`:
+  the call to action heading "Do you have the team to make it?" is his wording but is a question the page
+  then speaks to, which the rules otherwise ban; the locked Rico's Tacos card carries counts dated eighteen
+  days before the Tide side, an unrelated FloQast comparison, and a claim that the series runs on channels
+  P&G owns when the film sits on MinivelaTV; and the principle name "It's Not About You. It's About Them."
+  uses a sentence shape the rules otherwise ban.
+- The landing menu still lists all four headlines and lets a viewer start at any round. The first design
+  review recommended removing it because it breaks Tom's order. It stays because Evan asked for each round
+  to be reachable as its own link on the earlier version. Evan's call.
+- Sources read first hand: MarketCast via MarTech Edge, Insurity via Business Wire, YouTube's own blog on
+  Stratos, the Kunstmeile Krems exhibition on Red Bull's cartoons, and Tom Langan's editions. The YETI
+  sponsorship history rests on one October 2019 Front Office Sports report.
 - Separately, the Volvo block in the shared library carries two claims that do not hold, and it is live
   on three prospect docs. Detail in `../research/skincare-doc-and-volvo-2026-09-11.md`.

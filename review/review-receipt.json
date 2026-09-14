@@ -1,0 +1,12 @@
+{
+  "schema": 2,
+  "artifact": "C:\\Users\\evane\\OneDrive\\Documents\\Claude\\Talex\\ReverseLeadMagnet\\v10-legendeering-ladder\\copy-deck.md",
+  "sha256": "eb614ab73ce2951f64af6d6ccd81163c40e7d4cb9d9d32d0fc3e7e6a2467411c",
+  "profile": "public",
+  "writer": "Claude Opus 5, build session",
+  "reviewer": "Claude Fable 5.1, three fresh independent contexts",
+  "review_file": "C:\\Users\\evane\\OneDrive\\Documents\\Claude\\Talex\\ReverseLeadMagnet\\v10-legendeering-ladder\\review\\review-record-2026-09-14.md",
+  "review_sha256": "477e0dbfb2b6e44ea9f2c20126cd116d9ba29969bd04eb10629962cd0a541203",
+  "reviewed_at": "2026-09-14T15:36:29.554771+00:00",
+  "authority": "Writing/README.md@2026-09-11.2"
+}

@@ -63,15 +63,15 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A television commercial for Tide."
+        "A commercial for Tide."
       ],
       [
         "A company that did it",
         "P&G, on Tide's own channel, October 2025."
       ],
       [
-        "Episode length",
-        "One film"
+        "Length",
+        "30 seconds"
       ]
     ],
     "stats": [
@@ -88,7 +88,7 @@ window.SIDES = {
         "Length"
       ]
     ],
-    "note": "Tide's own channel, 15 October 2025. Views read 11 September 2026."
+    "note": "Tide's own channel, 15 October 2025. Views read 11 September 2026. The two films in this round sit on different channels."
   },
   "mayhem": {
     "id": "mayhem",
@@ -111,7 +111,7 @@ window.SIDES = {
         "Allstate, on its own channel."
       ],
       [
-        "Episode length",
+        "Length",
         "This one runs 60 seconds"
       ]
     ],
@@ -122,14 +122,14 @@ window.SIDES = {
       ],
       [
         "31%",
-        "Chose Him To Grab A Beer With"
+        "Would Most Like A Beer With Mayhem"
       ],
       [
         "+8%",
         "Likeability, Above The Norm"
       ]
     ],
-    "note": "<a href=\"https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds\" target=\"_blank\" rel=\"noopener\">MarketCast</a> measured insurance mascots from January 2024 to February 2025, reported by MarTech Edge on 1 April 2025. The beer figure is from an Insurity survey, 7 March 2024. Both rank Mayhem against other insurers' mascots, not against Allstate's own commercials."
+    "note": "<a href=\"https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds\" target=\"_blank\" rel=\"noopener\">MarketCast</a> measured insurance mascots from January 2024 to February 2025, reported by MarTech Edge on 1 April 2025. The beer figure is from an Insurity survey, 7 March 2024, where Mayhem came second to Jake from State Farm. Both rank Mayhem against other insurers' mascots, not against Allstate's own commercials."
   },
   "checkFirst": {
     "id": "check-first",
@@ -152,7 +152,7 @@ window.SIDES = {
         "Allstate, on its own channel."
       ],
       [
-        "Episode length",
+        "Length",
         "This one runs 30 seconds"
       ]
     ],
@@ -166,8 +166,8 @@ window.SIDES = {
         "Each Film"
       ],
       [
-        "Same brand",
-        "As Mayhem"
+        "3 Sep 2026",
+        "Published"
       ]
     ],
     "note": "Allstate's own channel, 3 September 2026. We found no published memorability score for this campaign."
@@ -186,15 +186,15 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A live event streamed free to anyone who wanted it, then the films cut from it."
+        "A live event streamed free, then the films cut from it."
       ],
       [
         "A company that did it",
         "Red Bull, 14 October 2012, on its own channel."
       ],
       [
-        "Episode length",
-        "The stream ran the whole mission"
+        "Length",
+        "This highlights film runs 90 seconds"
       ]
     ],
     "stats": [
@@ -203,22 +203,22 @@ window.SIDES = {
         "YouTube Views, 11 Sep 2026"
       ],
       [
-        "8M",
-        "Watching Live At Once"
+        "8M+",
+        "Live Streams At Once"
       ],
       [
         "Free",
         "No Sign-Up, No Gate"
       ]
     ],
-    "note": "More than 8 million people watched the jump live at the same time, a YouTube record then. The Drum, Forbes and Tubefilter reported it on 14 and 15 October 2012. Red Bull's own channel; views read 11 September 2026."
+    "note": "<a href=\"https://blog.youtube/news-and-events/mission-complete-red-bull-stratos-lands/\" target=\"_blank\" rel=\"noopener\">YouTube</a> reported more than 8 million concurrent livestreams at the peak, the most concurrent views of any livestream on YouTube at the time. YouTube's own blog, 14 October 2012. Red Bull's own channel; views read 11 September 2026."
   },
   "confession": {
     "id": "confession",
     "name": "Red Bull, a Gives You Wiiings cartoon",
     "officialChannel": true,
     "scale": "Commercial · Animated, thirty seconds",
-    "title": "A thirty-second cartoon with a new joke each time",
+    "title": "A thirty-second cartoon with a new story each time",
     "video": {
       "id": "0b3OPo9wHuk",
       "label": "Confession, a 2011 Red Bull cartoon advert",
@@ -227,15 +227,15 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "An animated commercial. The same look and a new joke every time, running from at least 2000 through this 2011 film."
+        "An animated commercial in the cartoon style Red Bull has used since 1989, with a new story each time."
       ],
       [
         "A company that did it",
         "Red Bull, on its own channel."
       ],
       [
-        "Episode length",
-        "Thirty seconds"
+        "Length",
+        "30 seconds"
       ]
     ],
     "stats": [
@@ -244,22 +244,22 @@ window.SIDES = {
         "YouTube Views, 11 Sep 2026"
       ],
       [
-        "11 yrs",
-        "Same Format, At Least"
+        "Since 1989",
+        "Red Bull Cartoon Ads"
       ],
       [
         "30 sec",
         "Length"
       ]
     ],
-    "note": "Red Bull's own channel, 26 January 2011; views read 11 September 2026. Both films sit on the same channel, so the two counts compare fairly."
+    "note": "Red Bull's own channel, 26 January 2011; views read 11 September 2026. Both films sit on the same channel, so the two counts compare fairly. Red Bull's first cartoon commercials ran in 1989, according to the <a href=\"https://www.kunstmeile.at/en/program/gives-you-wings\" target=\"_blank\" rel=\"noopener\">Kunstmeile Krems</a> exhibition Gives You Wings, 2017."
   },
   "yetiFilm": {
     "id": "yeti-presents",
     "name": "YETI, YETI Presents",
     "officialChannel": true,
     "scale": "Long-Form Episodic · Documentary",
-    "title": "A film it made, on a channel it owns",
+    "title": "A film YETI made, on a channel YETI owns",
     "video": {
       "id": "OmrufRLGdAk",
       "label": "YETI Presents, A Thousand Casts",
@@ -289,8 +289,8 @@ window.SIDES = {
         "YETI Presents Has Run"
       ],
       [
-        "Its own",
-        "Whose Channel It Sits On"
+        "YETI's",
+        "Channel The Film Sits On"
       ]
     ],
     "note": "YETI's own channel, 15 August 2023; views read 11 September 2026. The two films sit on different channels, and that is the point of the round."
@@ -299,8 +299,8 @@ window.SIDES = {
     "id": "pbr-sponsor",
     "name": "YETI, sponsoring the PBR bull riding award",
     "officialChannel": true,
-    "scale": "Sponsorship · A name on someone else's award",
-    "title": "Its name on an award inside somebody else's show",
+    "scale": "Sponsorship · A name on somebody else's award",
+    "title": "YETI's name on an award inside PBR's show",
     "video": {
       "id": "6ti-Ky0zYhA",
       "label": "2026 PBR YETI Bucking Bull Champion Ransom",
@@ -316,7 +316,7 @@ window.SIDES = {
         "YETI, which first sponsored PBR in 2013 and has sponsored it again since 2017."
       ],
       [
-        "Episode length",
+        "Length",
         "This segment runs seven and a half minutes"
       ]
     ],
@@ -326,12 +326,12 @@ window.SIDES = {
         "YouTube Views, 11 Sep 2026"
       ],
       [
-        "Since 2013",
+        "Since 2017",
         "YETI Has Sponsored PBR"
       ],
       [
         "PBR's",
-        "Whose Channel It Sits On"
+        "Channel The Film Sits On"
       ]
     ],
     "note": "Published on PBR's own channel on 17 May 2026; view count read on 11 September 2026. The sponsorship history is as reported by Front Office Sports in October 2019."
@@ -351,7 +351,7 @@ window.ROUNDS = [
       "tideSpot"
     ],
     "winner": "ricos",
-    "measure": "did more people watch",
+    "measure": "got more views",
     "quote": "\"You need it to be episodic, because a series earns you a return visit and a one off never does.\"",
     "cite": "Tom Langan, Welcome to The Taco Drama, 30 July 2026",
     "url": "https://www.linkedin.com/pulse/welcome-taco-drama-tom-langan-wusce",
@@ -364,7 +364,7 @@ window.ROUNDS = [
         },
         {
           "side": "tideSpot",
-          "text": "Thirty seconds in prime time puts it in front of more people at once."
+          "text": "Thirty seconds on television puts it in front of more people at once."
         },
         {
           "side": "tideSpot",
@@ -387,7 +387,7 @@ window.ROUNDS = [
     ],
     "winner": "mayhem",
     "measure": "do people remember",
-    "quote": "MarketCast measured insurance mascots from January 2024 to February 2025 and put Mayhem first for likeability and for the most memorable ads. In a separate survey, 31 percent of people asked picked Mayhem as the mascot they would most like to grab a beer with.",
+    "quote": "MarketCast measured insurance mascots from January 2024 to February 2025 and put Mayhem first for likeability and for the most memorable ads. In a separate survey, 31 percent of people asked picked Mayhem as the mascot they would most like to grab a beer with, second only to Jake from State Farm.",
     "cite": "MarketCast via MarTech Edge, 1 April 2025, and Insurity via Business Wire, 7 March 2024",
     "url": "https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds",
     "why": {
@@ -399,11 +399,11 @@ window.ROUNDS = [
         },
         {
           "side": "mayhem",
-          "text": "People have come to know him, so each new film is a chance to see what he gets up to next."
+          "text": "People have come to know him, so each new film is a chance to see what he does next."
         },
         {
           "side": "checkFirst",
-          "text": "A line people can repeat is easier to recall than a character."
+          "text": "A new face in every film is easier to notice than the same character again."
         }
       ]
     }
@@ -421,12 +421,12 @@ window.ROUNDS = [
       "confession"
     ],
     "winner": "stratos",
-    "measure": "did more people choose to watch",
+    "measure": "was watched more",
     "quote": "\"They didn't gate it behind a sign-up. They didn't cut away to a guy chugging a can the second Felix landed.\"",
     "cite": "Tom Langan, Where the Rubber Meets The Restaurant, 10 June 2026",
     "url": "https://www.linkedin.com/pulse/where-rubber-meets-restaurant-tom-langan-gllme",
     "why": {
-      "question": "Both films are Red Bull, on the same channel. Why did one get nearly two hundred times the audience?",
+      "question": "Both films are Red Bull, on the same channel. Why did one get nearly two hundred times the views?",
       "options": [
         {
           "side": "stratos",
@@ -434,7 +434,7 @@ window.ROUNDS = [
         },
         {
           "side": "confession",
-          "text": "A thirty-second cartoon is cheap enough to run all year."
+          "text": "A thirty-second cartoon costs little enough to run all year."
         },
         {
           "side": "confession",
@@ -446,7 +446,7 @@ window.ROUNDS = [
   {
     "rung": "ownership",
     "id": "own-or-rent",
-    "job": "YETI: make the film, or put your name on someone else's?",
+    "job": "YETI: make the film, or put your name on somebody else's?",
     "lens": [
       "Give Without Expectation",
       "It's Not About You. It's About Them."
@@ -456,7 +456,7 @@ window.ROUNDS = [
       "pbrSponsor"
     ],
     "winner": "yetiFilm",
-    "measure": "leaves YETI with the audience afterwards",
+    "measure": "did more for YETI",
     "quote": "PBR makes the film and owns the channel it sits on. YETI Presents started in 2015, two years before the sponsorship resumed.",
     "cite": "PBR, 17 May 2026, and Front Office Sports, October 2019",
     "url": "https://www.youtube.com/watch?v=6ti-Ky0zYhA",
@@ -484,9 +484,9 @@ window.COPY = {
   "brand": "Talex Media",
   "eyebrow": "A choose your own adventure case study · draft for Tom",
   "title": "Which one worked?",
-  "lead": "Four rounds, each one a single company shown two ways. Pick the one that worked, then say why.",
+  "lead": "Each of the four rounds shows one company two ways. Pick the one that worked, then say why.",
   "gate": "\"If you stripped your name and your product off this piece of content, would anyone still want to watch it?\"",
-  "gateCite": "Tom Langan, What's 100 Years Old is New Again",
+  "gateCite": "Tom Langan, What's 100 Years Old is New Again, 22 May 2026",
   "gateUrl": "https://www.linkedin.com/pulse/whats-100-years-old-new-again-tom-langan-6bm2e",
   "start": "Start round one",
   "roundLabel": "Round {n} of {total}",
@@ -517,7 +517,7 @@ window.COPY = {
   "resultStep": "Your result",
   "resultHeading": "You called {n} of 8.",
   "resultHigh": "You read these the way we do.",
-  "resultLow": "Instinct went one way and the examples went another. That is a normal place to start.",
+  "resultLow": "Instinct went one way and the examples went another.",
   "highFrom": 6,
   "scoreLabel": "Points",
   "streakLabel": "Streak",
@@ -546,22 +546,22 @@ window.COPY = {
   "recordPick": "Pick",
   "synthesisHeading": "Put the four rounds together",
   "synthesis": [
-    "A single film is watched once. A series gives people a reason to come back.",
-    "Coming back is not enough on its own. People grow fond of a cast and come back to see what happens to those people next. A line gives an audience nothing to grow fond of.",
+    "A series gives people a reason to come back. A single film does not.",
+    "Coming back is not enough on its own. People grow fond of a cast and come back to see what happens to those people next. A new cast every time gives an audience nobody to grow fond of.",
     "People return for something they want to watch, not for something about the product.",
-    "And when you own the show, the audience is yours, not rented."
+    "When you own the show, the audience is yours, not rented."
   ],
-  "synthesisClose": "So here is the question for your own company. Could you make a show that comes back every week or every month, with a format and a cast your audience gets to know? Could you make it for them rather than about you, and own it rather than rent it from somebody else?",
+  "synthesisClose": "Could your company make a show that comes back every week or every month, with a format and a cast your audience gets to know? Could you make that show for your audience rather than about your company, and own it rather than rent space in somebody else's show?",
   "cta": {
     "heading": "Do you have the team to make it?",
-    "copy": "Most companies get to an idea on their own. The crew is the part that is usually missing, and that is the part we do.",
+    "copy": "If you have the idea but not the team to make it, Talex is the team.",
     "button": "Book A Call With Our Team",
     "url": "https://calendly.com/talextom/20-min-discovery-call"
   },
   "share": "Send this to a colleague",
   "shared": "Link copied",
   "startOver": "Start over",
-  "sample": "Every film is real and plays on the page, and each card names where its figures came from. Draft: the why-answers are not yet approved by Tom.",
+  "sample": "Every film plays on the page, and each card names where its figures came from. Draft: the why-answers are not yet approved by Tom.",
   "ordinals": [
     "first",
     "second"
