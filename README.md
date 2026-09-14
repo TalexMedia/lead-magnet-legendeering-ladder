@@ -18,8 +18,8 @@ the thing on the losing side right now.
 
 **Views are not evidence on their own.** A view count on a brand's own channel mostly reports what the
 brand paid to promote. GEICO's own uploads ran from 3,246 to 21 million views, several posted the same
-day. A view count settles a round only where both films sit on the same channel, and where the work
-itself has been measured, that measure leads.
+day. Where the work itself has been measured, that measure leads. Where the two films in a round sit on
+different channels, the card says so.
 
 **No tells.** A card on the pick screen says what the thing is, never why it wins. The verdict lives
 only in the reveal. The build gate enforces this on every title, category, spec row, stat caption,
@@ -33,12 +33,12 @@ Tom's order from the call. Each rung teaches one thing, and they build.
 |---|---|---|---|
 | 1 | Repetition | Rico's Tacos, a twenty-two episode series, against a single Tide film, both P&G | 200,363 views on one episode against 26,840 on the film |
 | 2 | Format and character, not just repeating | Mayhem, one character since 2010, against Check First, a new cast in each film, both Allstate | MarketCast put Mayhem first among insurance mascots for likeability and for the most memorable ads; 31 percent of people in an Insurity survey picked him as the mascot they would most like to grab a beer with |
-| 3 | Something people want to watch, about the audience not the brand | The Stratos jump against a Gives You Wiiings cartoon, both Red Bull | 49,046,929 views against 251,520 on the same channel, and 8 million watching the jump live |
+| 3 | Something people want to watch, about the audience not the brand | The Stratos jump against a Gives You Wiiings cartoon, both Red Bull | 49,046,929 views against 251,520 on the same channel, and more than 8 million concurrent livestreams of the jump, per YouTube |
 | 4 | Own the show rather than sponsor someone else's | A YETI Presents film against YETI's name on a PBR bull riding award | 1,368,483 views on YETI's own channel against 13,672 on PBR's, and only one of those audiences belongs to YETI |
 
 **Round 2 carries Tom and Evan's subtlest point.** On the 11 September call they pinned it down: the
 audience does not have to trust a character, only like them, grow fond of them, and look forward to
-seeing what situation they are in next. A line repeating gives an audience nothing to grow fond of.
+seeing what situation they are in next. A new cast every time gives an audience nobody to grow fond of.
 Wanting a beer with a character is liking them, which is why the Insurity figure is there.
 
 **Round 2's honest limit.** Both of its measures rank Mayhem against other insurers' mascots. Nobody has
@@ -90,8 +90,6 @@ read from YouTube's own `lengthSeconds` on 2026-09-14. Films play muted.
 | `check-rounds.js` | The gate. Each rule carries the decision it came from. |
 | `extract-copy.js` | Writes `copy-deck.md`, every word a viewer sees in page order, so the Talex linter can read it. |
 | `lint-adjudications.json` | The written decision on every linter warning. |
-
-Build, then lint:
 
 One command runs the whole release check and says whether the live copy is still the reviewed copy:
 
@@ -152,12 +150,16 @@ answer away; or if either phrase Evan cut ever reappears.
 
 - Tom has not seen this version, the why-answers or the Allstate round. The landing notice still marks the
   why-answers as not yet approved by Tom.
-- **Three items for Evan from the writing review**, detailed in `review/adjudication-1-2026-09-14.md`:
-  the call to action heading "Do you have the team to make it?" is his wording but is a question the page
-  then speaks to, which the rules otherwise ban; the locked Rico's Tacos card carries counts dated eighteen
-  days before the Tide side, an unrelated FloQast comparison, and a claim that the series runs on channels
-  P&G owns when the film sits on MinivelaTV; and the principle name "It's Not About You. It's About Them."
-  uses a sentence shape the rules otherwise ban.
+- **Evan decided two of the three review items on 14 September:** keep the call to action heading "Do you
+  have the team to make it?" and keep the principle name "It's Not About You. It's About Them." Both stay
+  as written. Recorded here rather than in `review/`, because editing the review record would void the receipt.
+- **Still open for Evan: the locked Rico's Tacos card.** Its source note includes "For a longer-form
+  comparison, the accounting software company FloQast makes PBC", with a link. That is a deliberate
+  cross-reference on a strategy doc, but out of place in round 1, which compares P&G only. Its counts are
+  dated 24 August 2026, eighteen days before the Tide side. Its spec says the series runs "on channels the
+  company owns", which is partly true, since Albertsons owns its in-store screens and app, but the YouTube
+  film embedded here sits on MinivelaTV, the media partner's channel. The block changes only by updating the
+  live strategy card and re-extracting it.
 - The landing menu still lists all four headlines and lets a viewer start at any round. The first design
   review recommended removing it because it breaks Tom's order. It stays because Evan asked for each round
   to be reachable as its own link on the earlier version. Evan's call.
