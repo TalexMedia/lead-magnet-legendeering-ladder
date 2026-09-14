@@ -78,8 +78,8 @@
   .video::after{content:'';position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.38),transparent);pointer-events:none}
   .video.playing::after{display:none}
   .video .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-  .video .play span{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s var(--ease),background .2s}
-  .video:hover .play span{transform:scale(1.08);background:rgba(255,255,255,.9)}
+  .video .play .playbtn{border:0;padding:0;cursor:pointer;width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .25s var(--ease),background .2s}
+  .video .play .playbtn:hover,.video .play .playbtn:focus-visible{transform:scale(1.08);background:rgba(255,255,255,.9)}
   .video .play svg{width:20px;height:20px;fill:var(--txt);margin-left:3px}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .body{padding:1.05rem 1.15rem 1.15rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
@@ -112,7 +112,7 @@
   .podium .cmp{grid-row:1;margin-bottom:.8rem}
   .podium .phead{grid-row:2;display:none}
   .podium .card,.podium .tile{grid-row:3;position:relative;z-index:1;margin-bottom:.8rem}
-  .podium .spot{grid-row:3;position:relative;z-index:0;margin:-14% 0 -10%;border-radius:36px;background:radial-gradient(60% 55% at 50% 45%,rgba(232,90,12,.24),rgba(232,90,12,0) 70%);pointer-events:none;opacity:0}
+  .podium .spot{grid-row:3;position:relative;z-index:0;margin:-14% 0 -10%;border-radius:36px;background:radial-gradient(60% 55% at 50% 45%,rgba(232,90,12,.34),rgba(232,90,12,0) 70%);pointer-events:none;opacity:0}
   .podium .platform{grid-row:4;align-self:end}
   .plabel{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p1 .plabel{color:var(--o);font-weight:600;font-size:12px}
@@ -207,12 +207,41 @@
   main.anim .opts > .opt{animation:rise .55s var(--ease) both;animation-delay:calc(var(--i,0) * 80ms + 150ms)}
   main.leave > *{opacity:0;transform:translateY(-8px);transition:opacity .16s ease,transform .16s ease}
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}main.leave > *{opacity:1;transform:none}}
+  /* ---- 14 September 2026 review ------------------------------------------------ */
+  /* The picked card carries a tick. With two cards and one choice there is no ranking yet. */
+  .place.check svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  /* The reveal shows each side once, as a numbers tile under its medal. */
+  .tile.reveal{gap:.55rem;padding:1.05rem 1.15rem}
+  .tile.reveal .name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.05rem;line-height:1.3}
+  .tile.reveal .stats{margin-top:.15rem}
+  .tile.reveal .stat .fig{font-size:1.45rem;color:var(--o)}
+  .tile.reveal .stat.measure .fig{font-size:1.7rem;color:var(--txt)}
+  .tile.reveal .spec{font-size:.86rem}
+  /* The result screen: one row per round, so the synthesis is the climax rather than buried. */
+  .record{display:flex;flex-direction:column;border-top:1px solid var(--border);margin-top:1.6rem}
+  .rec-row{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+  .rec-n{width:30px;height:30px;border-radius:50%;background:var(--txt);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.05rem}
+  .rec-job{font-family:'Oswald',sans-serif;font-weight:600;font-size:1rem;line-height:1.3}
+  .rec-reason{font-size:.9rem;color:var(--soft);margin-top:.2rem}
+  .rec-chips{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
+  /* The synthesis carries the weight now. Dark like the CTA below it, with an orange rule on the
+     left so the two dark blocks read as the question, then the answer. */
+  .panel.synth{background:var(--txt);color:#fff;border:0;border-left:4px solid var(--o);box-shadow:var(--shadow-md);max-width:none}
+  .panel.synth .lbl{color:#F3B08A}
+  .panel.synth .synthlist li{font-size:1.1rem;color:#fff}
+  .panel.synth .synthclose{color:#fff;font-size:1.35rem;border-top-color:rgba(255,255,255,.18)}
+  @media (max-width:620px){.rec-row{grid-template-columns:auto 1fr}.rec-chips{grid-column:2;justify-content:flex-start}}
+  /* Phones: keep first and second distinct, keep the lock button in reach, stop the header wrapping. */
+  @media (max-width:820px){.actions.sticky{position:sticky;bottom:0;z-index:15;padding:.8rem 0 1rem;background:linear-gradient(to top,var(--bg) 70%,rgba(245,242,236,0));margin-top:1rem}}
+  @media (max-width:480px){.progress{display:none}}
   @media (max-width:820px){
     .grid,.podium,.podium.compact{grid-template-columns:1fr;grid-template-rows:none;align-items:stretch;row-gap:1.2rem}
     .pcol{display:flex;flex-direction:column;gap:.7rem}
     .podium .cmp,.podium .card,.podium .tile{margin-bottom:0}
     .podium .phead{display:flex;align-items:center;gap:.7rem}
-    .platform,.podium .spot{display:none}
+    .podium .spot{display:none}
+    .platform{display:flex;height:34px}.p1 .platform{height:48px}
+    .platform .medal{width:22px;height:28px}.p1 .platform .medal{width:28px;height:36px}
   }
   @media print{.btn,.actions,.video .play,footer,.bar{display:none!important}.cta{background:#fff;color:#000;border:1px solid #999}.cta p{color:#000}}
 </style>
@@ -241,7 +270,7 @@
   <footer id="foot"></footer>
 </div>
 
-<script src="content.js?v=0d43ec0ca1"></script>
+<script src="content.js?v=c79e554fb8"></script>
 <script>
 (function(){
   'use strict';
@@ -302,34 +331,52 @@
   /* media: every side is a real film; the build refuses a side without one */
   function media(side){
     if (side.video && side.video.id) {
-      var w = el('button', 'video'); w.type = 'button'; w.setAttribute('aria-label', 'Play ' + strip(side.video.label));
+      /* The thumbnail belongs to the card, so tapping it picks the card. Only the play button plays
+         the film. On a phone the thumbnail is the largest target on screen, and it used to start a
+         video when the viewer was trying to choose. */
+      var w = el('div', 'video');
       var img = el('img'); img.alt = ''; img.loading = 'lazy'; img.src = 'https://i.ytimg.com/vi/' + side.video.id + '/hqdefault.jpg';
-      w.appendChild(img); w.appendChild(html('div', 'play', '<span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>'));
-      w.addEventListener('click', function(ev){ ev.stopPropagation(); var f = el('iframe'); f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true; f.title = strip(side.video.label);
+      var pl = el('div', 'play'); var btn = html('button', 'playbtn', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'); btn.type = 'button'; btn.setAttribute('aria-label', 'Play ' + strip(side.video.label)); pl.appendChild(btn);
+      w.appendChild(img); w.appendChild(pl);
+      btn.addEventListener('click', function(ev){ ev.stopPropagation(); var f = el('iframe'); f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true; f.title = strip(side.video.label);
         /* Muted on purpose, so nothing plays sound without the viewer choosing it. */
-        f.src = 'https://www.youtube-nocookie.com/embed/' + side.video.id + '?autoplay=1&mute=1&rel=0'; w.innerHTML = ''; w.appendChild(f); w.classList.add('playing'); w.style.cursor = 'default'; });
+        f.src = 'https://www.youtube-nocookie.com/embed/' + side.video.id + '?autoplay=1&mute=1&rel=0'; w.innerHTML = ''; w.appendChild(f); w.classList.add('playing'); });
       return w;
     }
     throw new Error('side without a film: ' + side.id);
   }
+  /* The pick screen. A card here is a poster: the film, what it is, and one line on its format.
+     Every other row, every figure and the source note wait for the reveal, so each card is read in
+     full once instead of twice. That is most of what "let the examples do the talking" means. */
   function card(round, k, opts){
     var side = SD[k];
     var c = el('div', 'card' + (opts.pickable ? ' pick' : '') + (opts.picked ? ' picked' : ''));
     if (opts.pickable) { c.setAttribute('role', 'button'); c.tabIndex = 0; c.setAttribute('aria-pressed', opts.picked ? 'true' : 'false'); }
-    if (opts.place !== undefined) c.appendChild(numeral(opts.place + 1, 'place' + (opts.fresh ? ' fresh' : '')));
+    /* A tick, not a "1". With two cards and one choice there is no ranking yet. */
+    if (opts.picked) c.appendChild(html('span', 'num place check' + (opts.fresh ? ' fresh' : ''), ICON_OK));
     c.appendChild(media(side));
-    /* What the film is and whose channel it is on. Shown from the start, because a viewer deciding
-       between two films is entitled to know that one of them is a listener's copy. */
+    /* Whose channel the film is on. Shown from the start, because a viewer choosing between two
+       films is entitled to know where each one came from. */
     if (side.video && side.video.caption) c.appendChild(html('div', 'filmcap', side.video.caption));
     var body = el('div', 'body');
     body.appendChild(html('div', 'scale', side.scale));
     body.appendChild(el('div', 'name', side.title));
-    side.spec.slice(0, 3).forEach(function(row){ var s = el('div', 'spec'); s.appendChild(el('b', null, row[0])); s.appendChild(html('span', null, row[1])); body.appendChild(s); });
-    if (opts.stats) { var st = el('div', 'stats'); side.stats.forEach(function(s, i){ var d = el('div', 'stat' + (i === 0 ? ' measure' : '')); d.appendChild(el('div', 'fig', s[0])); d.appendChild(el('div', 'cap', s[1])); st.appendChild(d); }); body.appendChild(st); }
-    /* Where every figure came from, with its link. Held back until the pick is locked so the note
-       cannot tip the answer, but never omitted: the landing screen promises it. */
-    if (opts.stats && side.note) body.appendChild(html('div', 'src', side.note));
+    var first = side.spec[0];
+    if (first) { var s = el('div', 'spec'); s.appendChild(el('b', null, first[0])); s.appendChild(html('span', null, first[1])); body.appendChild(s); }
     c.appendChild(body); return c;
+  }
+  /* The reveal. The same side as a numbers tile: all its figures, the rest of its spec rows and its
+     source note. Between this and the pick card every spec row renders exactly once, which matters
+     because the Rico's Tacos block is locked and used to lose its fourth row. */
+  function revealTile(k){
+    var side = SD[k], t = el('div', 'tile reveal');
+    t.appendChild(el('div', 'name', nameOf(k)));
+    var st = el('div', 'stats');
+    side.stats.forEach(function(s, i){ var d = el('div', 'stat' + (i === 0 ? ' measure' : '')); d.appendChild(el('div', 'fig', s[0])); d.appendChild(el('div', 'cap', s[1])); st.appendChild(d); });
+    t.appendChild(st);
+    side.spec.slice(1).forEach(function(row){ var s = el('div', 'spec'); s.appendChild(el('b', null, row[0])); s.appendChild(html('span', null, row[1])); t.appendChild(s); });
+    if (side.note) t.appendChild(html('div', 'src', side.note));
+    return t;
   }
   var ICON_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>', ICON_NO = '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>', ICON_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg>';
   function chip(ord, pick, k){
@@ -340,7 +387,10 @@
     var re = el('div', 'cmp-side'); re.appendChild(el('span', 'cmp-lbl', C.cmpReal)); re.appendChild(medal(real)); w.appendChild(re);
     var v = html('span', 'cmp-verdict', right ? ICON_OK : ICON_NO); v.appendChild(document.createTextNode(right ? C.logRight : C.logMissed)); w.appendChild(v); return w;
   }
-  function podium(round, ord, pick, compact){
+  /* mode 'reveal': the big podium with a full numbers tile under each medal.
+     mode 'compact': the small recap used on the reason screen. */
+  function podium(round, ord, pick, mode){
+    var compact = mode === 'compact';
     var w = el('div', 'podium' + (compact ? ' compact' : ''));
     ord.forEach(function(k, i){
       var seq = compact ? i : 1 - i;
@@ -348,7 +398,7 @@
       var ch = chip(ord, pick, k); ch.style.setProperty('--i', seq); col.appendChild(ch);
       var head = el('div', 'phead'); head.appendChild(medal(i)); head.appendChild(el('span', 'plabel', cap(ordinal(i)))); col.appendChild(head);
       if (compact) { var t = el('div', 'tile'), m = SD[k].stats[0]; t.appendChild(el('div', 'name', nameOf(k))); t.appendChild(el('div', 'fig', m[0])); t.appendChild(el('div', 'cap', m[1])); col.appendChild(t); }
-      else { if (i === 0) col.appendChild(el('div', 'spot')); col.appendChild(card(round, k, { stats:true })); }
+      else { if (i === 0) col.appendChild(el('div', 'spot')); col.appendChild(revealTile(k)); }
       var pf = el('div', 'platform'); pf.style.setProperty('--i', seq); pf.appendChild(medal(i)); pf.appendChild(el('span', 'pf-lbl', cap(ordinal(i)))); col.appendChild(pf);
       w.appendChild(col);
     });
@@ -358,6 +408,15 @@
   function progress(text){ $('progress').textContent = text || ''; }
   function bar(){ var total = R.length * STEPS.length + 1, done; if (S.step === 'landing') done = 0; else if (S.step === 'result') done = total; else done = S.round * STEPS.length + STEPS.indexOf(S.step) + 1; $('barfill').style.width = (100 * done / total) + '%'; }
 
+  /* Reopening a round that has already been played returns to how it went, rather than letting it
+     be picked again. Re-picking used to change what the reveal showed without changing the score
+     that had already been recorded, so the page could contradict itself. */
+  function openRound(i){
+    var L = S.log[i]; S.round = i; history.replaceState(null, '', '#r' + (i + 1));
+    if (L && L.gotWhy !== null && S.optOrder[i]) { S.pick = L.pick; S.whyPick = L.whyPick; go('whyreveal'); return; }
+    if (L) { S.pick = L.pick; S.whyPick = null; go('why'); return; }
+    S.pick = null; S.whyPick = null; go('pick');
+  }
   function landing(){
     progress('');
     header(C.eyebrow, C.title, C.lead);
@@ -366,7 +425,7 @@
     R.forEach(function(r, i){
       var a2 = el('a'); a2.href = '#r' + (i + 1); a2.appendChild(numeral(i + 1)); a2.appendChild(el('span', 't', r.job));
       var L = S.log[i]; if (L && L.gotWhy !== null) { var d = el('span', 'chip ' + ((L.gotWinner ? 1 : 0) + (L.gotWhy ? 1 : 0) === 2 ? 'ok' : 'no') + ' done', ((L.gotWinner ? 1 : 0) + (L.gotWhy ? 1 : 0)) + ' of 2'); a2.appendChild(d); }
-      a2.addEventListener('click', function(ev){ ev.preventDefault(); S.round = i; S.pick = null; S.whyPick = null; history.replaceState(null, '', '#r' + (i + 1)); go('pick'); });
+      a2.addEventListener('click', function(ev){ ev.preventDefault(); openRound(i); });
       m.appendChild(a2);
     });
     main.appendChild(m);
@@ -378,21 +437,23 @@
     if (!S.display[S.round]) S.display[S.round] = shuffle(r.sides);
     progress(roundLabel() + ' · ' + C.pickStep);
     header(roundLabel() + ' · ' + C.pickStep, r.job, fill(C.pickLead, { measure:r.measure }));
-    var lens = el('div', 'lens'); r.lens.forEach(function(l){ lens.appendChild(el('span', null, l)); }); main.appendChild(lens);
-    var ins = el('div', 'instr'); ins.appendChild(numeral(1)); ins.appendChild(el('span', null, C.pickInstruction)); main.appendChild(ins);
+    /* No principle tags here. They name the lesson, so above the cards they point at the answer.
+       They now appear on the reveal, where they name what the viewer has just worked out. */
+    var ins = el('div', 'instr'); ins.appendChild(el('span', null, C.pickInstruction)); main.appendChild(ins);
     var g = el('div', 'grid');
     S.display[S.round].forEach(function(k, i){
       var picked = S.pick === k;
-      var c = card(r, k, { pickable:true, picked:picked, place:picked ? 0 : undefined, fresh:picked && S.fresh });
+      var c = card(r, k, { pickable:true, picked:picked, fresh:picked && S.fresh });
       c.style.setProperty('--i', i);
       var toggle = function(){ S.pick = picked ? null : k; S.fresh = !picked; render(false); setTimeout(function(){ S.fresh = false; }, 600); };
       c.addEventListener('click', toggle); c.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
       g.appendChild(c);
     });
     main.appendChild(g);
-    var a = el('div', 'actions'); var lock = el('button', 'btn', C.lock); lock.type = 'button'; lock.disabled = !S.pick; lock.addEventListener('click', function(){ if (S.pick) go('reveal'); });
-    var back = el('button', 'btn ghost', C.startOver); back.type = 'button'; back.addEventListener('click', function(){ history.replaceState(null, '', location.pathname); go('landing'); });
-    a.appendChild(lock); a.appendChild(back); main.appendChild(a);
+    /* "Start over" is gone from this screen: it went to the landing page but kept the score, so it
+       did not start anything over. The real reset lives on the result screen. */
+    var a = el('div', 'actions sticky'); var lock = el('button', 'btn', C.lock); lock.type = 'button'; lock.disabled = !S.pick; lock.addEventListener('click', function(){ if (S.pick) go('reveal'); });
+    a.appendChild(lock); main.appendChild(a);
   }
   function reveal(){
     var r = R[S.round], ord = order(r), winner = ord[0], got = S.pick === winner;
@@ -400,7 +461,8 @@
     progress(roundLabel() + ' · ' + C.revealStep);
     header(roundLabel() + ' · ' + C.revealStep, r.job, null);
     main.appendChild(el('p', 'verdict', got ? C.calledWinner : fill(C.missedWinner, { pick:nameOf(S.pick), winner:nameOf(winner) })));
-    main.appendChild(podium(r, ord, S.pick, false));
+    var lens = el('div', 'lens'); r.lens.forEach(function(l){ lens.appendChild(el('span', null, l)); }); main.appendChild(lens);
+    main.appendChild(podium(r, ord, S.pick, 'reveal'));
     var a = el('div', 'actions'); var b = el('button', 'btn', C.whyStep); b.type = 'button'; b.addEventListener('click', function(){ go('why'); }); a.appendChild(b); main.appendChild(a);
     Array.prototype.forEach.call(main.querySelectorAll('.podium .stat.measure .fig'), function(f, i){ countUp(f, 500 + i * 110); });
   }
@@ -412,7 +474,7 @@
     var o = el('div', 'opts');
     S.optOrder[S.round].forEach(function(idx, k){ var opt = r.why.options[idx]; var b = el('button', 'opt'); b.type = 'button'; b.setAttribute('aria-pressed', S.whyPick === idx ? 'true' : 'false'); b.style.setProperty('--i', k); b.appendChild(numeral(String.fromCharCode(65 + k), 'k')); b.appendChild(el('span', null, opt.text)); b.addEventListener('click', function(){ S.whyPick = (S.whyPick === idx) ? null : idx; render(false); }); o.appendChild(b); });
     main.appendChild(o);
-    var a = el('div', 'actions'); var lock = el('button', 'btn', C.choose); lock.type = 'button'; lock.disabled = S.whyPick === null; lock.addEventListener('click', function(){ if (S.whyPick !== null) go('whyreveal'); }); a.appendChild(lock); main.appendChild(a);
+    var a = el('div', 'actions sticky'); var lock = el('button', 'btn', C.choose); lock.type = 'button'; lock.disabled = S.whyPick === null; lock.addEventListener('click', function(){ if (S.whyPick !== null) go('whyreveal'); }); a.appendChild(lock); main.appendChild(a);
   }
   function whyreveal(){
     var r = R[S.round], ord = order(r), winner = ord[0], pk = r.why.options[S.whyPick], right = pk.side === winner;
@@ -421,26 +483,39 @@
     header(roundLabel() + ' · ' + C.whyRevealStep, r.job, null);
     main.appendChild(el('p', 'verdict', right ? C.whyRight : C.whyWrong));
     main.appendChild(el('h2', null, C.realOrder));
-    main.appendChild(podium(r, ord, S.log[S.round].pick, true));
+    main.appendChild(podium(r, ord, S.log[S.round].pick, 'compact'));
     main.appendChild(el('h2', null, r.why.question));
     var o = el('div', 'opts');
     S.optOrder[S.round].forEach(function(idx, k){ var opt = r.why.options[idx], isWin = opt.side === winner, mine = idx === S.whyPick; var b = el('div', 'opt' + (isWin ? ' win' : '')); b.style.setProperty('--i', k); b.appendChild(numeral(String.fromCharCode(65 + k), 'k')); var t = el('span'); t.appendChild(document.createTextNode(opt.text)); var of = el('span', 'of'); of.appendChild(el('span', 'chip', fill(C.optionTrueOf, { name:nameOf(opt.side) }))); if (isWin) of.appendChild(el('span', 'chip ok', C.winnerFact)); if (mine) of.appendChild(el('span', 'chip ' + (right ? 'ok' : 'no'), C.yourAnswer)); t.appendChild(of); b.appendChild(t); o.appendChild(b); });
     main.appendChild(o);
     var src = el('div', 'panel'); src.appendChild(el('p', 'lbl', C.sourceLabel)); src.appendChild(html('p', null, r.quote)); var ct = el('cite'); ct.appendChild(document.createTextNode(r.cite + ' · ')); var a1 = el('a', null, 'source'); a1.href = r.url; a1.target = '_blank'; a1.rel = 'noopener'; ct.appendChild(a1); src.appendChild(ct); main.appendChild(src);
-    var tk = el('div', 'panel'); tk.appendChild(el('p', 'lbl', C.takeawayLabel)); tk.appendChild(el('p', null, r.teach)); tk.appendChild(el('div', 'approval', C.approval)); main.appendChild(tk);
+    /* No "What it teaches" panel. The correct answer already states the reason, the result screen
+       repeats it, and the synthesis adds all four up, so a per-round takeaway was the lesson told a
+       fourth time. Tom's objection to the first version was exactly that: telling instead of leading. */
     var a = el('div', 'actions'); var last = S.round === R.length - 1; var b = el('button', 'btn', last ? C.seeResult : fill(C.nextRound, { n:S.round + 2 })); b.type = 'button';
     b.addEventListener('click', function(){ if (last) { history.replaceState(null, '', '#result'); go('result'); } else { S.round += 1; S.pick = null; S.whyPick = null; history.replaceState(null, '', '#r' + (S.round + 1)); go('pick'); } });
-    var menu = el('button', 'btn ghost', C.startOver); menu.type = 'button'; menu.addEventListener('click', function(){ history.replaceState(null, '', location.pathname); go('landing'); });
-    a.appendChild(b); a.appendChild(menu); main.appendChild(a);
+    a.appendChild(b); main.appendChild(a);
   }
   function result(){
     progress(C.resultStep);
     main.appendChild(el('p', 'eyebrow', C.resultStep));
     var parts = C.resultHeading.split('{n}'), h = el('h1'); h.appendChild(document.createTextNode(parts[0])); var n = el('span', 'count', String(S.score)); h.appendChild(n); h.appendChild(document.createTextNode(parts[1] || '')); main.appendChild(h);
     var tier = el('div', 'tier'); tier.appendChild(medal(S.score >= C.highFrom ? 0 : 1)); tier.appendChild(el('span', null, tierOf(S.score).name)); main.appendChild(tier);
-    main.appendChild(el('p', 'lead', C.resultSub));
     main.appendChild(el('p', 'verdict', S.score >= C.highFrom ? C.resultHigh : C.resultLow));
-    R.forEach(function(r, i){ var L = S.log[i]; if (!L) return; var ord = order(r); var blk = el('div', 'roundblock'); blk.appendChild(el('p', 'eyebrow', fill(C.roundLabel, { n:i + 1, total:R.length }))); blk.appendChild(el('h2', null, r.job)); blk.appendChild(podium(r, ord, L.pick, true)); var re = el('div', 'reason'); re.appendChild(el('b', null, C.reasonRow + ':')); re.appendChild(el('span', 'chip ' + (L.gotWhy ? 'ok' : 'no'), L.gotWhy ? C.logRight : C.logMissed)); re.appendChild(el('span', null, r.why.options.filter(function(o){ return o.side === r.winner; })[0].text)); blk.appendChild(re); main.appendChild(blk); });
+    /* One row per round. Four full podiums used to run for two screens and bury the synthesis,
+       which is the part of this page that matters. */
+    var rec = el('div', 'record');
+    R.forEach(function(r, i){
+      var L = S.log[i]; if (!L) return;
+      var row = el('div', 'rec-row'); row.style.setProperty('--i', i);
+      row.appendChild(el('span', 'rec-n', String(i + 1)));
+      var mid = el('div', 'rec-mid'); mid.appendChild(el('div', 'rec-job', r.job)); mid.appendChild(el('div', 'rec-reason', r.why.options.filter(function(o){ return o.side === r.winner; })[0].text)); row.appendChild(mid);
+      var chips = el('div', 'rec-chips');
+      chips.appendChild(el('span', 'chip ' + (L.gotWinner ? 'ok' : 'no'), C.recordPick + ' · ' + (L.gotWinner ? C.logRight : C.logMissed)));
+      chips.appendChild(el('span', 'chip ' + (L.gotWhy ? 'ok' : 'no'), C.reasonRow + ' · ' + (L.gotWhy ? C.logRight : C.logMissed)));
+      row.appendChild(chips); rec.appendChild(row);
+    });
+    main.appendChild(rec);
     /* The four rounds add up to one sentence. This is where they get added up, before the ask. */
     if (C.synthesis && C.synthesis.length) {
       var syn = el('div', 'panel synth'); syn.appendChild(el('p', 'lbl', C.synthesisHeading));
@@ -455,9 +530,8 @@
     var a = el('a', 'btn', C.cta.button); a.href = C.cta.url; a.target = '_blank'; a.rel = 'noopener'; cta.appendChild(a); main.appendChild(cta);
     var acts = el('div', 'actions');
     var share = el('button', 'btn ghost', C.share); share.type = 'button'; share.addEventListener('click', function(){ var url = location.href.split('#')[0]; var done = function(){ share.textContent = C.shared; setTimeout(function(){ share.textContent = C.share; }, 1800); }; if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done, function(){ window.prompt(C.share, url); }); } else { window.prompt(C.share, url); } });
-    var print = el('button', 'btn ghost', C.print); print.type = 'button'; print.addEventListener('click', function(){ window.print(); });
     var over = el('button', 'btn ghost', C.startOver); over.type = 'button'; over.addEventListener('click', function(){ S = { step:'landing', round:0, pick:null, display:{}, optOrder:{}, whyPick:null, score:0, streak:0, log:[] }; history.replaceState(null, '', location.pathname); go('landing'); });
-    acts.appendChild(share); acts.appendChild(print); acts.appendChild(over); main.appendChild(acts);
+    acts.appendChild(share); acts.appendChild(over); main.appendChild(acts);
     countUp(n, 400); if (S.score >= C.highFrom) setTimeout(confetti, 600);
   }
 

@@ -25,7 +25,11 @@ const BANNED = [
 // same neutral register and the verdict must live only in the reveal.
 const TELLS = [
   'the other way', 'the old way', 'the wrong way', 'the better way', 'the right way',
-  'what not to do', 'instead of this', 'obviously', 'of course'
+  'what not to do', 'instead of this', 'obviously', 'of course',
+  // Added 14 September 2026 from the Fable review. Each of these was found on a live card, stating
+  // the lesson or mocking the losing side before the viewer had chosen.
+  'given away', 'about the product', 'about the can', 'no next episode', 'nobody to follow',
+  'drinks the product', 'what happens to them', 'the same faces'
 ];
 
 function check(SIDES, ROUNDS, COPY, lib) {
@@ -98,18 +102,28 @@ function check(SIDES, ROUNDS, COPY, lib) {
     if (everything.indexOf(b.text) !== -1) fail('banned phrase "' + b.text + '" is still present. ' + b.why);
   });
 
-  // No card may give the answer away before the viewer picks. Only the text a viewer sees on the
-  // pick screen is checked: the scale label, the card title and the three stat captions.
+  // No card may give the answer away before the viewer picks. The first version of this check only
+  // read labels, and every tell the 14 September review found was sitting in a spec VALUE, a round
+  // headline or a measure instead. So it now reads everything on a card plus the round's own framing.
   Object.keys(SIDES).forEach((k) => {
     const s = SIDES[k];
+    if (s.fromLibrary) return; // locked library text is approved as it stands
     const onTheCard = [s.scale, s.title]
       .concat((s.stats || []).map((row) => row[1]))
-      .concat((s.spec || []).map((row) => row[0]))
+      .concat((s.spec || []).map((row) => row[0] + ' ' + row[1]))
       .join(' ')
       .toLowerCase();
     TELLS.forEach((t) => {
       if (onTheCard.indexOf(t) !== -1) {
         fail('side "' + k + '" gives the answer away on the card with the phrase "' + t + '". Describe both sides in the same neutral register and keep the verdict in the reveal.');
+      }
+    });
+  });
+  ROUNDS.forEach((r) => {
+    const framing = [r.job, r.measure].join(' ').toLowerCase();
+    TELLS.forEach((t) => {
+      if (framing.indexOf(t) !== -1) {
+        fail('round "' + r.id + '" gives the answer away in its headline or measure with the phrase "' + t + '"');
       }
     });
   });

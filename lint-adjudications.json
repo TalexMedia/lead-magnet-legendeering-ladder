@@ -1,0 +1,52 @@
+{
+  "artifact": "ReverseLeadMagnet/v10-legendeering-ladder/copy-deck.md",
+  "profile": "public",
+  "decided": "2026-09-14",
+  "warnings": [
+    {
+      "id": "9dc6dc989b91",
+      "rule": "quantifier needs scope check: all",
+      "reason": "Two instances. '940K Views, All Episodes' is locked text copied word for word from the approved Rico's Tacos block. 'cheap enough to run all year' is a distractor answer the page marks as wrong, a hypothetical rather than a factual claim."
+    },
+    {
+      "id": "8ce3cf58282f",
+      "rule": "quantifier needs scope check: every",
+      "reason": "'Every film is real and plays on the page' was checked true: all eight film ids returned HTTP 200 from YouTube oEmbed on 14 September 2026. 'every week or every month' sits inside a question to the reader. 'a new joke every time' describes the format of Red Bull's cartoon series and is scoped to that series."
+    },
+    {
+      "id": "e7ea6dec6af3",
+      "rule": "quantifier needs scope check: both",
+      "reason": "Each 'both' was checked against its cards: both Red Bull films are on Red Bull's own channel; both round four films are YETI's; both Mayhem measures rank him against other insurers' mascots, which the note states. All true."
+    },
+    {
+      "id": "cf508c67264c",
+      "rule": "quantifier needs scope check: each",
+      "reason": "'each one a single company' is true by construction and enforced by the build. 'each card names where its figures came from' was checked against all eight notes. 'a new cast in each film' describes Allstate's Check First campaign and is scoped to it."
+    },
+    {
+      "id": "cca84dd92a31",
+      "rule": "quantifier needs scope check: never",
+      "reason": "The only instance is 'a one off never does', inside a verbatim quotation from Tom Langan, Welcome to The Taco Drama, 30 July 2026. Quoted text keeps its exact wording."
+    },
+    {
+      "id": "fe84cacb4383",
+      "rule": "paragraph or sentence opens with a potentially ambiguous pronoun",
+      "reason": "Flagged on the copy deck's own header, which is generated scaffolding and never appears on the page. No reader-visible sentence opens with an ambiguous pronoun; the synthesis line that did was rewritten to open with 'People'."
+    },
+    {
+      "id": "c27b50bfcb1e",
+      "rule": "land/own may be a figurative verb",
+      "reason": "Every 'own' on this page is literal ownership, which is the subject of round four: a channel YETI owns, a show the reader would own rather than rent, PBR owning its own coverage. No figurative use. No 'land' appears except 'Felix landed' inside a verbatim Tom Langan quotation, where it is literal."
+    },
+    {
+      "id": "3fc95ca15698",
+      "rule": "two consecutive short sentences",
+      "reason": "Triggered by interface labels such as 'You called it.' and 'Right.', which render as separate controls and status lines rather than as consecutive sentences in running prose."
+    },
+    {
+      "id": "38af6dabab36",
+      "rule": "long sentence",
+      "reason": "The sentence is in the Rico's Tacos source note, which is copied word for word from the approved block library and locked. A block is only changed by editing the live card and re-extracting it, never on this page."
+    }
+  ]
+}

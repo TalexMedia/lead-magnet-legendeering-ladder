@@ -54,7 +54,7 @@ window.SIDES = {
     "name": "P&G, a Tide commercial",
     "officialChannel": true,
     "scale": "Commercial · One film",
-    "title": "One film, made about the product",
+    "title": "A thirty-second commercial",
     "video": {
       "id": "xPHs8yT8cPM",
       "label": "Tide, School Lunch",
@@ -63,11 +63,11 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A commercial. One film, about the product, with no next episode."
+        "A television commercial for Tide."
       ],
       [
         "A company that did it",
-        "P&G, on Tide's own channel, October 2025. The same company that makes Rico's Tacos."
+        "P&G, on Tide's own channel, October 2025."
       ],
       [
         "Episode length",
@@ -88,96 +88,96 @@ window.SIDES = {
         "Length"
       ]
     ],
-    "note": "Published on Tide's own channel on 15 October 2025. View count read on 11 September 2026. Both sides of this round are P&G, so the company, the budget and the audience are the same and only the approach changes."
+    "note": "Tide's own channel, 15 October 2025. Views read 11 September 2026."
   },
-  "bestWorst": {
-    "id": "best-worst-team",
-    "name": "Specsavers, The Best Worst Team",
+  "mayhem": {
+    "id": "mayhem",
+    "name": "Allstate, Mayhem",
     "officialChannel": true,
-    "scale": "Long-Form Episodic · Docuseries",
-    "title": "One team, one season, the same faces every episode",
+    "scale": "Commercial · The same character since 2010",
+    "title": "Mayhem, played by Dean Winters",
     "video": {
-      "id": "NdL2VYNYpQE",
-      "label": "There's More to Cwm, Specsavers' Best Worst Team, Series 2, Episode 1",
-      "caption": "There's More to Cwm &middot; Specsavers' Best Worst Team"
+      "id": "InPoTHIrnp0",
+      "label": "Mayhem: Action Hero, an Allstate commercial",
+      "caption": "Mayhem: Action Hero &middot; Allstate"
     },
     "spec": [
       [
         "Format",
-        "A docuseries following one football team through a season, narrated by Jill Scott. The same people turn up in every episode, so you find out what happens to them."
+        "A commercial starring Allstate's character Mayhem."
       ],
       [
         "A company that did it",
-        "Specsavers, The Best Worst Team. Eight parts, on its own channel."
+        "Allstate, on its own channel."
       ],
       [
         "Episode length",
-        "10-20 minutes per episode"
+        "This one runs 60 seconds"
       ]
     ],
     "stats": [
       [
-        "5 min",
-        "Average Watch Time Per Episode"
+        "#1",
+        "Most Memorable Ads, Insurance Mascots"
       ],
       [
-        "+35%",
-        "Brand Consideration"
+        "31%",
+        "Chose Him To Grab A Beer With"
       ],
       [
-        "23.3M",
-        "YouTube Views"
+        "+8%",
+        "Likeability, Above The Norm"
       ]
     ],
-    "note": "Figures from the campaign's award entry as reported by The Drum, 13 November 2024. <a href=\"https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team\" target=\"_blank\" rel=\"noopener\">Source</a>"
+    "note": "<a href=\"https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds\" target=\"_blank\" rel=\"noopener\">MarketCast</a> measured insurance mascots from January 2024 to February 2025, reported by MarTech Edge on 1 April 2025. The beer figure is from an Insurity survey, 7 March 2024. Both rank Mayhem against other insurers' mascots, not against Allstate's own commercials."
   },
-  "sgts": {
-    "id": "sgts-tv",
-    "name": "Specsavers, \"Should've gone to Specsavers\"",
+  "checkFirst": {
+    "id": "check-first",
+    "name": "Allstate, Check First",
     "officialChannel": true,
-    "scale": "Commercial · One spot, a line that ran twenty years",
-    "title": "A new world every time, held together by one line",
+    "scale": "Commercial · A new cast in each film",
+    "title": "A brother who checks Allstate first",
     "video": {
-      "id": "OMQiJojeryw",
-      "label": "Should've Gone To Specsavers 2024 TV Advert",
-      "caption": "Should've Gone To Specsavers, 2024 &middot; Specsavers"
+      "id": "I6QksAqf0jk",
+      "label": "Allstate Check First, Swim Meet",
+      "caption": "Check First: Swim Meet &middot; Allstate"
     },
     "spec": [
       [
         "Format",
-        "A television commercial. New cast, new setting, new joke, same closing line. Nobody in it ever appears twice, so there is nobody to follow."
+        "A commercial in Allstate's Check First campaign, with a new cast in each film."
       ],
       [
         "A company that did it",
-        "Specsavers, since 2003, on its own channel. The same company that makes The Best Worst Team."
+        "Allstate, on its own channel."
       ],
       [
         "Episode length",
-        "One film"
+        "This one runs 30 seconds"
       ]
     ],
     "stats": [
       [
         "30 sec",
-        "How Long It Asks For"
-      ],
-      [
-        "20 yrs",
-        "The Line Has Run"
+        "Length"
       ],
       [
         "New cast",
-        "Every Single Time"
+        "Each Film"
+      ],
+      [
+        "Same brand",
+        "As Mayhem"
       ]
     ],
-    "note": "Published on Specsavers' own channel on 1 February 2024. This campaign ran for twenty years and built one of the best known lines in Britain, which is exactly the point of the round: it passes the repetition test and the round still turns on something else. No view count is shown on either card here, because a view count on a brand channel largely reports what the brand paid to promote. Minutes watched is the fairer measure, and it is on the other card."
+    "note": "Allstate's own channel, 3 September 2026. We found no published memorability score for this campaign."
   },
   "stratos": {
     "id": "stratos",
     "name": "Red Bull, the Stratos jump",
     "officialChannel": true,
-    "scale": "Give Without Expectation · Live and free",
-    "title": "A jump from the edge of space, given away live",
+    "scale": "Live Event · Streamed free, then cut into films",
+    "title": "A jump from the edge of space, streamed live",
     "video": {
       "id": "FHtvDA0W34I",
       "label": "Felix Baumgartner's supersonic freefall from 128k', Mission Highlights",
@@ -211,14 +211,14 @@ window.SIDES = {
         "No Sign-Up, No Gate"
       ]
     ],
-    "note": "More than 8 million concurrent viewers, a YouTube record at the time, reported by The Drum, Forbes and Tubefilter on 14 and 15 October 2012 and confirmed by YouTube. Published on Red Bull's own channel on 14 October 2012; view count read on 11 September 2026."
+    "note": "More than 8 million people watched the jump live at the same time, a YouTube record then. The Drum, Forbes and Tubefilter reported it on 14 and 15 October 2012. Red Bull's own channel; views read 11 September 2026."
   },
   "confession": {
     "id": "confession",
     "name": "Red Bull, a Gives You Wiiings cartoon",
     "officialChannel": true,
     "scale": "Commercial · Animated, thirty seconds",
-    "title": "The cartoon where somebody drinks the product",
+    "title": "A thirty-second cartoon with a new joke each time",
     "video": {
       "id": "0b3OPo9wHuk",
       "label": "Confession, a 2011 Red Bull cartoon advert",
@@ -227,15 +227,15 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "An animated commercial. The same look and the same shape of joke, a new one every time, running from at least 2000 through this 2011 film."
+        "An animated commercial. The same look and a new joke every time, running from at least 2000 through this 2011 film."
       ],
       [
         "A company that did it",
-        "Red Bull, on its own channel. The same company and the same channel as the jump."
+        "Red Bull, on its own channel."
       ],
       [
         "Episode length",
-        "Thirty seconds, again and again for years"
+        "Thirty seconds"
       ]
     ],
     "stats": [
@@ -248,11 +248,11 @@ window.SIDES = {
         "Same Format, At Least"
       ],
       [
-        "The can",
-        "What It Is About"
+        "30 sec",
+        "Length"
       ]
     ],
-    "note": "Published on Red Bull's own channel on 26 January 2011; view count read on 11 September 2026. Both films in this round sit on the same channel, so the two counts are measuring the same thing."
+    "note": "Red Bull's own channel, 26 January 2011; views read 11 September 2026. Both films sit on the same channel, so the two counts compare fairly."
   },
   "yetiFilm": {
     "id": "yeti-presents",
@@ -268,11 +268,11 @@ window.SIDES = {
     "spec": [
       [
         "Format",
-        "A documentary film series about the people who live the way YETI customers want to live. The product is barely in it."
+        "A documentary film series. This one follows a fly fishing trip to Bhutan."
       ],
       [
         "A company that did it",
-        "YETI, on its own channel, about a dozen films a year since 2015."
+        "YETI, on its own channel, since 2015."
       ],
       [
         "Episode length",
@@ -293,7 +293,7 @@ window.SIDES = {
         "Whose Channel It Sits On"
       ]
     ],
-    "note": "Published on YETI's own channel on 15 August 2023; view count read on 11 September 2026. The two films in this round sit on different channels, which is the whole point of the round rather than a flaw in it: one audience is YETI's and one is somebody else's."
+    "note": "YETI's own channel, 15 August 2023; views read 11 September 2026. The two films sit on different channels, and that is the point of the round."
   },
   "pbrSponsor": {
     "id": "pbr-sponsor",
@@ -317,7 +317,7 @@ window.SIDES = {
       ],
       [
         "Episode length",
-        "This segment runs 7 minutes"
+        "This segment runs seven and a half minutes"
       ]
     ],
     "stats": [
@@ -334,7 +334,7 @@ window.SIDES = {
         "Whose Channel It Sits On"
       ]
     ],
-    "note": "Published on PBR's own channel on 17 May 2026; view count read on 11 September 2026. The sponsorship history is as reported by Front Office Sports in October 2019. This is a real and long-running sponsorship of a major sport, not a misstep."
+    "note": "Published on PBR's own channel on 17 May 2026; view count read on 11 September 2026. The sponsorship history is as reported by Front Office Sports in October 2019."
   }
 };
 
@@ -342,7 +342,7 @@ window.ROUNDS = [
   {
     "rung": "repetition",
     "id": "once-or-again",
-    "job": "P&G: one film, or a show twice a week?",
+    "job": "P&G: one film, or a twenty-two episode series?",
     "lens": [
       "Consistency Is Key"
     ],
@@ -351,17 +351,16 @@ window.ROUNDS = [
       "tideSpot"
     ],
     "winner": "ricos",
-    "measure": "the one people came back for",
-    "quote": "\"Instead of buying 30 seconds inside someone else's show, P&G decided to simply own the program outright.\" \"You need it to be episodic, because a series earns you a return visit and a one off never does.\" \"Attention you earn beats attention you rent every single time, because it arrives with a little trust already attached to it.\"",
+    "measure": "did more people watch",
+    "quote": "\"You need it to be episodic, because a series earns you a return visit and a one off never does.\"",
     "cite": "Tom Langan, Welcome to The Taco Drama, 30 July 2026",
     "url": "https://www.linkedin.com/pulse/welcome-taco-drama-tom-langan-wusce",
-    "teach": "A series earns a return visit. A one-off never does.",
     "why": {
       "question": "Why did the show work?",
       "options": [
         {
           "side": "ricos",
-          "text": "A series gives people a reason to come back, so the attention arrives with trust already attached."
+          "text": "A series gives people a reason to come back."
         },
         {
           "side": "tideSpot",
@@ -377,35 +376,34 @@ window.ROUNDS = [
   {
     "rung": "format",
     "id": "line-or-cast",
-    "job": "Specsavers: a line everyone knows, or a team they know?",
+    "job": "Allstate: Mayhem, or a new cast each time?",
     "lens": [
       "Consistency Is Key",
       "It's Not About You. It's About Them."
     ],
     "sides": [
-      "bestWorst",
-      "sgts"
+      "mayhem",
+      "checkFirst"
     ],
-    "winner": "bestWorst",
-    "measure": "the one people gave real time to",
-    "quote": "\"Gen Z audiences and younger are social natives, they spend less time watching TV, than any other age group, so a large proportion of our target audience were simply not as familiar with the Specsavers' brand.\" \"what was once a celebrated slogan, SGTS, that had worked wonders ATL, wasn't working for this audience, it was seen as the 'ultimate dad gag'.\"",
-    "cite": "The Drum, from the campaign's award entry, 13 November 2024",
-    "url": "https://www.thedrum.com/news/2024/11/13/here-s-how-specsavers-won-over-gen-z-sponsoring-the-nation-s-worst-football-team",
-    "teach": "A line repeating is not the same as a cast returning. People grow fond of a cast, and come back to see what happens to them next. A line gives them nothing to grow fond of.",
+    "winner": "mayhem",
+    "measure": "do people remember",
+    "quote": "MarketCast measured insurance mascots from January 2024 to February 2025 and put Mayhem first for likeability and for the most memorable ads. In a separate survey, 31 percent of people asked picked Mayhem as the mascot they would most like to grab a beer with.",
+    "cite": "MarketCast via MarTech Edge, 1 April 2025, and Insurity via Business Wire, 7 March 2024",
+    "url": "https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds",
     "why": {
-      "question": "A commercial asks for thirty seconds. Why did people give this five minutes an episode?",
+      "question": "Allstate makes both. Why is Mayhem the one people remember?",
       "options": [
         {
-          "side": "sgts",
-          "text": "A line people already know does the work before the film even starts."
+          "side": "checkFirst",
+          "text": "A fresh cast in every film keeps a campaign from going stale."
         },
         {
-          "side": "bestWorst",
-          "text": "People came to know the team, so every new episode was a chance to see what happened to them next."
+          "side": "mayhem",
+          "text": "People have come to know him, so each new film is a chance to see what he gets up to next."
         },
         {
-          "side": "sgts",
-          "text": "One spot can run everywhere at once, which a ten-minute episode cannot."
+          "side": "checkFirst",
+          "text": "A line people can repeat is easier to recall than a character."
         }
       ]
     }
@@ -413,7 +411,7 @@ window.ROUNDS = [
   {
     "rung": "audience",
     "id": "them-or-you",
-    "job": "Red Bull: the edge of space, or thirty seconds about the can?",
+    "job": "Red Bull: a jump from the edge of space, or a thirty-second cartoon?",
     "lens": [
       "Give Without Expectation",
       "It's Not About You. It's About Them."
@@ -423,13 +421,12 @@ window.ROUNDS = [
       "confession"
     ],
     "winner": "stratos",
-    "measure": "the one people chose to watch",
-    "quote": "\"They didn't gate it behind a sign-up. They didn't cut away to a guy chugging a can the second Felix landed.\" \"None of these brands led with the sale. They led with something their community actually wanted, and they trusted the relationship to pay them back. It did, every time.\"",
+    "measure": "did more people choose to watch",
+    "quote": "\"They didn't gate it behind a sign-up. They didn't cut away to a guy chugging a can the second Felix landed.\"",
     "cite": "Tom Langan, Where the Rubber Meets The Restaurant, 10 June 2026",
     "url": "https://www.linkedin.com/pulse/where-rubber-meets-restaurant-tom-langan-gllme",
-    "teach": "Give people something they actually want and the brand comes along for the ride.",
     "why": {
-      "question": "Both films are Red Bull, on the same channel. Why did one get two hundred times the audience?",
+      "question": "Both films are Red Bull, on the same channel. Why did one get nearly two hundred times the audience?",
       "options": [
         {
           "side": "stratos",
@@ -459,17 +456,16 @@ window.ROUNDS = [
       "pbrSponsor"
     ],
     "winner": "yetiFilm",
-    "measure": "the one whose audience YETI keeps",
-    "quote": "\"Ransom bucks off Brady Fielder in the Championship Round to become the 2026 PBR YETI Bucking Bull Champion.\" That is PBR's film, on PBR's channel, describing PBR's award. YETI's name is on it for as long as YETI pays for it. YETI Presents started in 2015, two years before the sponsorship resumed, and the two have run alongside each other ever since.",
+    "measure": "leaves YETI with the audience afterwards",
+    "quote": "PBR makes the film and owns the channel it sits on. YETI Presents started in 2015, two years before the sponsorship resumed.",
     "cite": "PBR, 17 May 2026, and Front Office Sports, October 2019",
     "url": "https://www.youtube.com/watch?v=6ti-Ky0zYhA",
-    "teach": "Renting puts your name in front of a crowd. Owning the film means the crowd is yours after it ends.",
     "why": {
       "question": "Both are YETI. Why does the film do more for YETI in the long run?",
       "options": [
         {
           "side": "yetiFilm",
-          "text": "It sits on a channel YETI owns, so everyone it brings in stays with YETI afterwards."
+          "text": "It sits on a channel YETI owns, so the audience it brings in is YETI's to keep."
         },
         {
           "side": "pbrSponsor",
@@ -488,15 +484,15 @@ window.COPY = {
   "brand": "Talex Media",
   "eyebrow": "A choose your own adventure case study · draft for Tom",
   "title": "Which one worked?",
-  "lead": "Four rounds. Each one is a single company shown two ways, so you are never comparing a big brand against a small one. Pick the one that worked, then say why.",
-  "gate": "\"If you stripped your name and your product off this piece of content, would anyone still want to watch it? If the answer is yes, you have earned the right to put your name back on. If the answer is no, you are making a commercial and calling it content.\"",
+  "lead": "Four rounds, each one a single company shown two ways. Pick the one that worked, then say why.",
+  "gate": "\"If you stripped your name and your product off this piece of content, would anyone still want to watch it?\"",
   "gateCite": "Tom Langan, What's 100 Years Old is New Again",
   "gateUrl": "https://www.linkedin.com/pulse/whats-100-years-old-new-again-tom-langan-6bm2e",
   "start": "Start round one",
   "roundLabel": "Round {n} of {total}",
   "pickStep": "Pick",
-  "pickLead": "Which one is {measure}?",
-  "pickInstruction": "Click the one you think worked. Click it again to change your mind.",
+  "pickLead": "Which one {measure}?",
+  "pickInstruction": "Choose the one you think worked.",
   "lock": "Lock in my pick",
   "revealStep": "What worked",
   "calledWinner": "You called it.",
@@ -509,22 +505,19 @@ window.COPY = {
   "whyStep": "Why did it work?",
   "whyLead": "The one that worked is {winner}.",
   "choose": "Lock in my answer",
-  "whyRight": "Right. That is the stated reason.",
-  "whyWrong": "Not the stated reason.",
+  "whyRight": "Right.",
+  "whyWrong": "Not this one.",
   "whyRevealStep": "The reason",
   "optionTrueOf": "About {name}",
-  "winnerFact": "The stated reason",
+  "winnerFact": "Why it worked",
   "yourAnswer": "Your answer",
-  "takeawayLabel": "What it teaches",
   "sourceLabel": "The source",
-  "approval": "Prepared for Talex review. Not yet approved by Tom.",
   "nextRound": "Round {n}",
   "seeResult": "See my result",
   "resultStep": "Your result",
   "resultHeading": "You called {n} of 8.",
-  "resultSub": "Four picks and four reasons. Here is how each round went.",
-  "resultHigh": "You read these the way we do. That is the conversation worth having.",
-  "resultLow": "Instinct went one way and the examples went another. That gap is the work we do every day, and it is a normal place to start.",
+  "resultHigh": "You read these the way we do.",
+  "resultLow": "Instinct went one way and the examples went another. That is a normal place to start.",
   "highFrom": 6,
   "scoreLabel": "Points",
   "streakLabel": "Streak",
@@ -550,14 +543,15 @@ window.COPY = {
   "logRight": "called it",
   "logMissed": "missed it",
   "reasonRow": "Reason",
+  "recordPick": "Pick",
   "synthesisHeading": "Put the four rounds together",
   "synthesis": [
     "A single film is watched once. A series gives people a reason to come back.",
-    "Coming back is not enough on its own. A cast and a world are what they come back to.",
-    "They return for something they want to watch, not for something about the product.",
-    "And when you own it, the audience is yours instead of rented by the month."
+    "Coming back is not enough on its own. People grow fond of a cast and come back to see what happens to those people next. A line gives an audience nothing to grow fond of.",
+    "People return for something they want to watch, not for something about the product.",
+    "And when you own the show, the audience is yours, not rented."
   ],
-  "synthesisClose": "So here is the question for your own company. Could you make a show that comes back every week or every month, with a format and a cast your audience gets to know? One made for them rather than about you, and owned by you rather than rented from somebody else.",
+  "synthesisClose": "So here is the question for your own company. Could you make a show that comes back every week or every month, with a format and a cast your audience gets to know? Could you make it for them rather than about you, and own it rather than rent it from somebody else?",
   "cta": {
     "heading": "Do you have the team to make it?",
     "copy": "Most companies get to an idea on their own. The crew is the part that is usually missing, and that is the part we do.",
@@ -566,9 +560,8 @@ window.COPY = {
   },
   "share": "Send this to a colleague",
   "shared": "Link copied",
-  "print": "Print my result",
   "startOver": "Start over",
-  "sample": "Every round is one company two ways, so nothing here turns on one brand being bigger than another. Every film is real, plays on the page, and links to its source. Figures were read on 11 September 2026 and are dated on each card. The why-answers are prepared by Talex and not yet approved by Tom.",
+  "sample": "Every film is real and plays on the page, and each card names where its figures came from. Draft: the why-answers are not yet approved by Tom.",
   "ordinals": [
     "first",
     "second"
