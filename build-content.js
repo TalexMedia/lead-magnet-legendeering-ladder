@@ -1,165 +1,62 @@
 // Regenerates content.js and stamps a content hash onto the script URL in index.html.
 // Run from this folder:  node build-content.js
 //
-// THE RULE THAT SHAPES EVERY ROUND: one company, two ways.
-// Evan, 11 September 2026, rejecting a pair that set Apple against Progressive: "one is a way
-// bigger company and it's spent way more on it, and the series loses to that." Right. Comparing
-// two companies compares two budgets. Putting one company's own two approaches side by side holds
-// the budget, the brand and the audience still, so the approach is the only thing left changing.
+// TWO KINDS OF CONTENT, KEPT APART ON PURPOSE.
 //
-// THE RULE ON EVIDENCE: a view count on a brand's own channel mostly reports what the brand paid to
-// promote. GEICO's own uploads ran from 3,246 to 21 million views, several posted the same day. Where
-// the work itself has been measured, that measure leads. Where two films sit on different channels,
-// the card says so.
+// Structure lives in this file: which film is on which card, who wins each round, the round order,
+// the principle tags, and the verbatim source quotes. These were settled with Tom and Evan.
 //
-// THE RULE ON TELLS: a card on the pick screen describes what the thing IS, never why it wins. The
-// verdict lives only in the reveal. check-rounds.js enforces this on titles, categories, every spec
-// row, every stat caption, the headline and the measure.
+// Editorial content lives in cards.json: every caption, category, title, spec row, stat and source
+// note, plus each round's headline, question and answers. Evan, 14 September 2026, asked that Fable make
+// these decisions "because these decisions are important", so cards.json holds Fable's decisions and
+// this build applies them word for word. It does not reinterpret them, and it refuses to run if any card
+// or field is missing, so nothing can fall back to an unapproved value.
 //
-// THE WRITING SYSTEM: this copy goes through Writing/README.md. Lint, independent review, fixes, final
-// review, receipt. Run verify-release.js to confirm the live copy is still the reviewed copy. The
-// review evidence and every adjudication are in review/.
+// WHAT THE PAGE IS FOR. Evan: "This is not a strategy doc. This is a lead magnet which is designed to
+// show the principles of Legendeering in an interactive way." A card carries only what explains its
+// round. Nothing is imported from the strategy-doc block library; check-rounds.js enforces that.
 //
-// Every film id below was confirmed through YouTube's oEmbed endpoint, which also proves it embeds.
-// Every film length was read from YouTube's own lengthSeconds on 14 September 2026.
+// Every figure in cards.json was read on 14 September 2026 from YouTube's own data for each film, or is
+// from a source named in its note. Every film was confirmed to embed through YouTube's oEmbed endpoint.
 const fs = require('fs');
 const path = require('path');
 const { check } = require('./check-rounds');
 const libPath = path.join(__dirname, '..', '..', 'ProspectAudit', 'templates', 'format-blocks.json');
 const lib = JSON.parse(fs.readFileSync(libPath, 'utf8')).blocks;
 
-function fromBlock(id, extra) {
-  const b = lib[id]; if (!b) throw new Error('missing block ' + id);
-  return Object.assign({ id, scale: b.scale, title: b.cardTitle, video: b.video, spec: b.spec, stats: b.stats, note: b.note, fromLibrary: true }, extra || {});
-}
-
+// ---- Structure --------------------------------------------------------------------------------
 const SIDES = {
-  // ---- Round 1, P&G ----------------------------------------------------------------
-  ricos: fromBlock('sitcom-ricos-tacos', { name: "P&G, Rico's Tacos", officialChannel: true }),
-  tideSpot: { id: 'tide-school-lunch', name: 'P&G, a Tide commercial', officialChannel: true,
-    scale: 'Commercial · One film', title: 'A thirty-second commercial',
-    video: { id: 'xPHs8yT8cPM', label: 'Tide, School Lunch', caption: 'School Lunch &middot; Tide' },
-    spec: [['Format', 'A commercial for Tide.'], ['A company that did it', 'P&G, on Tide\'s own channel, October 2025.'], ['Length', '30 seconds']],
-    stats: [['26,840', 'YouTube Views, 11 Sep 2026'], ['1', 'Film'], ['30 sec', 'Length']],
-    // The two round 1 films sit on different channels, which the evidence rule says the card must
-    // state. Raised in independent review 1, item E2.
-    note: 'Tide\'s own channel, 15 October 2025. Views read 11 September 2026. The two films in this round sit on different channels.' },
-
-  // ---- Round 2, Allstate -----------------------------------------------------------
-  // Specsavers was here until 14 September. Evan asked for an American company, because Specsavers
-  // is British and US prospects will not recognise it. GEICO was tried first and rejected: its view
-  // counts track media spend, and Tom's "good news" campaign is not on its channel. Allstate runs both
-  // shapes on its own channel at the same time: Mayhem, one character since 2010, and Check First,
-  // a new cast in each film. Mayhem is measured on the work itself, not on views.
-  //
-  // THE LIMIT, stated on the card: both measures rank Mayhem against other insurers' mascots. Nobody
-  // has published a score comparing Mayhem with Allstate's own Check First films.
-  mayhem: { id: 'mayhem', name: 'Allstate, Mayhem', officialChannel: true,
-    scale: 'Commercial · The same character since 2010', title: 'Mayhem, played by Dean Winters',
-    video: { id: 'InPoTHIrnp0', label: 'Mayhem: Action Hero, an Allstate commercial', caption: 'Mayhem: Action Hero &middot; Allstate' },
-    spec: [['Format', 'A commercial starring Allstate\'s character Mayhem.'], ['A company that did it', 'Allstate, on its own channel.'], ['Length', 'This one runs 60 seconds']],
-    stats: [['#1', 'Most Memorable Ads, Insurance Mascots'], ['31%', 'Would Most Like A Beer With Mayhem'], ['+8%', 'Likeability, Above The Norm']],
-    note: '<a href="https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds" target="_blank" rel="noopener">MarketCast</a> measured insurance mascots from January 2024 to February 2025, reported by MarTech Edge on 1 April 2025. The beer figure is from an Insurity survey, 7 March 2024, where Mayhem came second to Jake from State Farm. Both rank Mayhem against other insurers\' mascots, not against Allstate\'s own commercials.' },
-  checkFirst: { id: 'check-first', name: 'Allstate, Check First', officialChannel: true,
-    scale: 'Commercial · A new cast in each film', title: 'A brother who checks Allstate first',
-    video: { id: 'I6QksAqf0jk', label: 'Allstate Check First, Swim Meet', caption: 'Check First: Swim Meet &middot; Allstate' },
-    spec: [['Format', 'A commercial in Allstate\'s Check First campaign, with a new cast in each film.'], ['A company that did it', 'Allstate, on its own channel.'], ['Length', 'This one runs 30 seconds']],
-    stats: [['30 sec', 'Length'], ['New cast', 'Each Film'], ['3 Sep 2026', 'Published']],
-    note: 'Allstate\'s own channel, 3 September 2026. We found no published memorability score for this campaign.' },
-
-  // ---- Round 3, Red Bull -----------------------------------------------------------
-  stratos: { id: 'stratos', name: 'Red Bull, the Stratos jump', officialChannel: true,
-    scale: 'Live Event · Streamed free, then cut into films', title: 'A jump from the edge of space, streamed live',
-    video: { id: 'FHtvDA0W34I', label: "Felix Baumgartner's supersonic freefall from 128k', Mission Highlights", caption: 'Mission Highlights &middot; Red Bull Stratos' },
-    spec: [['Format', 'A live event streamed free, then the films cut from it.'], ['A company that did it', 'Red Bull, 14 October 2012, on its own channel.'], ['Length', 'This highlights film runs 90 seconds']],
-    // "Live streams", not people: YouTube counted concurrent livestreams, and one stream is not one
-    // person. Cited to YouTube's own blog, read first hand, replacing three outlets never opened.
-    stats: [['49,046,929', 'YouTube Views, 11 Sep 2026'], ['8M+', 'Live Streams At Once'], ['Free', 'No Sign-Up, No Gate']],
-    note: '<a href="https://blog.youtube/news-and-events/mission-complete-red-bull-stratos-lands/" target="_blank" rel="noopener">YouTube</a> reported more than 8 million concurrent livestreams at the peak, the most concurrent views of any livestream on YouTube at the time. YouTube\'s own blog, 14 October 2012. Red Bull\'s own channel; views read 11 September 2026.' },
-  confession: { id: 'confession', name: 'Red Bull, a Gives You Wiiings cartoon', officialChannel: true,
-    scale: 'Commercial · Animated, thirty seconds', title: 'A thirty-second cartoon with a new story each time',
-    video: { id: '0b3OPo9wHuk', label: 'Confession, a 2011 Red Bull cartoon advert', caption: 'Confession, 2011 &middot; Red Bull' },
-    // 1989 is from the Kunstmeile Krems exhibition "Gives You Wings. 30 Years of Cartoons by Red Bull",
-    // 2017, read first hand. It replaces "at least 2000", which rested only on a fan upload's title.
-    spec: [['Format', 'An animated commercial in the cartoon style Red Bull has used since 1989, with a new story each time.'], ['A company that did it', 'Red Bull, on its own channel.'], ['Length', '30 seconds']],
-    stats: [['251,520', 'YouTube Views, 11 Sep 2026'], ['Since 1989', 'Red Bull Cartoon Ads'], ['30 sec', 'Length']],
-    note: 'Red Bull\'s own channel, 26 January 2011; views read 11 September 2026. Both films sit on the same channel, so the two counts compare fairly. Red Bull\'s first cartoon commercials ran in 1989, according to the <a href="https://www.kunstmeile.at/en/program/gives-you-wings" target="_blank" rel="noopener">Kunstmeile Krems</a> exhibition Gives You Wings, 2017.' },
-
-  // ---- Round 4, YETI ---------------------------------------------------------------
-  // Mailchimp was here until 11 September. Tom and Evan both dropped it on the call because the 2014
-  // Serial read was "too far in the past". YETI first sponsored PBR in 2013 and again from 2017.
-  yetiFilm: { id: 'yeti-presents', name: 'YETI, YETI Presents', officialChannel: true,
-    scale: 'Long-Form Episodic · Documentary', title: 'A film YETI made, on a channel YETI owns',
-    video: { id: 'OmrufRLGdAk', label: 'YETI Presents, A Thousand Casts', caption: 'A Thousand Casts &middot; YETI' },
-    spec: [['Format', 'A documentary film series. This one follows a fly fishing trip to Bhutan.'], ['A company that did it', 'YETI, on its own channel, since 2015.'], ['Episode length', 'This one runs 28 minutes']],
-    stats: [['1,368,483', 'YouTube Views, 11 Sep 2026'], ['Since 2015', 'YETI Presents Has Run'], ['YETI\'s', 'Channel The Film Sits On']],
-    note: 'YETI\'s own channel, 15 August 2023; views read 11 September 2026. The two films sit on different channels, and that is the point of the round.' },
-  pbrSponsor: { id: 'pbr-sponsor', name: 'YETI, sponsoring the PBR bull riding award', officialChannel: true,
-    scale: 'Sponsorship · A name on somebody else\'s award', title: 'YETI\'s name on an award inside PBR\'s show',
-    video: { id: '6ti-Ky0zYhA', label: '2026 PBR YETI Bucking Bull Champion Ransom', caption: 'The 2026 PBR YETI Bucking Bull Champion &middot; PBR' },
-    spec: [['Format', 'A season award named after the sponsor, inside coverage that Professional Bull Riders makes and owns.'], ['A company that did it', 'YETI, which first sponsored PBR in 2013 and has sponsored it again since 2017.'], ['Length', 'This segment runs seven and a half minutes']],
-    // "Since 2017", not 2013. The sponsorship ran in 2013, lapsed, and resumed in 2017, so "since 2013"
-    // claimed an unbroken run the source contradicts. Raised in independent review 1, item F2.
-    stats: [['13,672', 'YouTube Views, 11 Sep 2026'], ['Since 2017', 'YETI Has Sponsored PBR'], ['PBR\'s', 'Channel The Film Sits On']],
-    note: 'Published on PBR\'s own channel on 17 May 2026; view count read on 11 September 2026. The sponsorship history is as reported by Front Office Sports in October 2019.' }
+  ricos:      { id: 'ricos-tacos',      name: 'P&G, Rico\'s Tacos',                        officialChannel: true, video: { id: 'PeUsXJ4ccXY', label: 'Rico\'s Tacos, Episode 1: Flavor Has a Price' } },
+  tideSpot:   { id: 'tide-school-lunch', name: 'P&G, a Tide commercial',                   officialChannel: true, video: { id: 'xPHs8yT8cPM', label: 'Tide, School Lunch' } },
+  mayhem:     { id: 'mayhem',            name: 'Allstate, Mayhem',                         officialChannel: true, video: { id: 'InPoTHIrnp0', label: 'Mayhem: Action Hero, an Allstate commercial' } },
+  checkFirst: { id: 'check-first',       name: 'Allstate, Check First',                    officialChannel: true, video: { id: 'I6QksAqf0jk', label: 'Allstate Check First, Swim Meet' } },
+  stratos:    { id: 'stratos',           name: 'Red Bull, the Stratos jump',               officialChannel: true, video: { id: 'FHtvDA0W34I', label: "Felix Baumgartner's supersonic freefall from 128k', Mission Highlights" } },
+  confession: { id: 'confession',        name: 'Red Bull, a Gives You Wiiings cartoon',    officialChannel: true, video: { id: '0b3OPo9wHuk', label: 'Confession, a 2011 Red Bull cartoon advert' } },
+  yetiFilm:   { id: 'yeti-presents',     name: 'YETI, YETI Presents',                      officialChannel: true, video: { id: 'OmrufRLGdAk', label: 'YETI Presents, A Thousand Casts' } },
+  pbrSponsor: { id: 'pbr-sponsor',       name: 'YETI, sponsoring the PBR bull riding award', officialChannel: true, video: { id: '6ti-Ky0zYhA', label: '2026 PBR YETI Bucking Bull Champion Ransom' } }
 };
 
 const ROUNDS = [
-  { rung: 'repetition', id: 'once-or-again', job: 'P&G: one film, or a twenty-two episode series?',
-    // Evan, 11 September: Give Without Expectation comes off round one "because we want that to
-    // come after". One rung, one idea.
-    lens: ['Consistency Is Key'],
-    sides: ['ricos', 'tideSpot'], winner: 'ricos', measure: 'got more views',
+  { rung: 'repetition', id: 'once-or-again', lens: ['Consistency Is Key'], sides: ['ricos', 'tideSpot'], winner: 'ricos',
     quote: '"You need it to be episodic, because a series earns you a return visit and a one off never does."',
-    cite: 'Tom Langan, Welcome to The Taco Drama, 30 July 2026', url: 'https://www.linkedin.com/pulse/welcome-taco-drama-tom-langan-wusce',
-    why: { question: 'Why did the show work?', options: [
-      { side: 'ricos', text: 'A series gives people a reason to come back.' },
-      { side: 'tideSpot', text: 'Thirty seconds on television puts it in front of more people at once.' },
-      { side: 'tideSpot', text: 'One polished film costs far less to make than twenty-two episodes.' } ] } },
-
-  { rung: 'format', id: 'line-or-cast', job: 'Allstate: Mayhem, or a new cast each time?',
-    lens: ['Consistency Is Key', 'It\'s Not About You. It\'s About Them.'],
-    sides: ['mayhem', 'checkFirst'], winner: 'mayhem', measure: 'do people remember',
-    // Plain sourced fact rather than a quotation. Tom and Evan's point on the 11 September call was
-    // that the audience does not need to trust a character, only like them. Wanting a beer with
-    // someone is liking them. "Second only to Jake" keeps the 31 percent from reading as a first place.
+    cite: 'Tom Langan, Welcome to The Taco Drama, 30 July 2026', url: 'https://www.linkedin.com/pulse/welcome-taco-drama-tom-langan-wusce' },
+  { rung: 'format', id: 'line-or-cast', lens: ['Consistency Is Key', 'It\'s Not About You. It\'s About Them.'], sides: ['mayhem', 'checkFirst'], winner: 'mayhem',
     quote: 'MarketCast measured insurance mascots from January 2024 to February 2025 and put Mayhem first for likeability and for the most memorable ads. In a separate survey, 31 percent of people asked picked Mayhem as the mascot they would most like to grab a beer with, second only to Jake from State Farm.',
-    cite: 'MarketCast via MarTech Edge, 1 April 2025, and Insurity via Business Wire, 7 March 2024', url: 'https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds',
-    why: { question: 'Allstate makes both. Why is Mayhem the one people remember?', options: [
-      { side: 'checkFirst', text: 'A fresh cast in every film keeps a campaign from going stale.' },
-      { side: 'mayhem', text: 'People have come to know him, so each new film is a chance to see what he does next.' },
-      { side: 'checkFirst', text: 'A new face in every film is easier to notice than the same character again.' } ] } },
-
-  { rung: 'audience', id: 'them-or-you', job: 'Red Bull: a jump from the edge of space, or a thirty-second cartoon?',
-    lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'],
-    sides: ['stratos', 'confession'], winner: 'stratos', measure: 'was watched more',
+    cite: 'MarketCast via MarTech Edge, 1 April 2025, and Insurity via Business Wire, 7 March 2024', url: 'https://martechedge.com/news/liberty-mutuals-limu-emu-leads-the-pack-in-insurance-mascot-performance-marketcast-finds' },
+  { rung: 'audience', id: 'them-or-you', lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'], sides: ['stratos', 'confession'], winner: 'stratos',
     quote: '"They didn\'t gate it behind a sign-up. They didn\'t cut away to a guy chugging a can the second Felix landed."',
-    cite: 'Tom Langan, Where the Rubber Meets The Restaurant, 10 June 2026', url: 'https://www.linkedin.com/pulse/where-rubber-meets-restaurant-tom-langan-gllme',
-    why: { question: 'Both films are Red Bull, on the same channel. Why did one get nearly two hundred times the views?', options: [
-      { side: 'stratos', text: 'It was something people wanted to watch, given away free, with nothing asked in return.' },
-      { side: 'confession', text: 'A thirty-second cartoon costs little enough to run all year.' },
-      { side: 'confession', text: 'Putting the product on screen is what turns attention into sales.' } ] } },
-
-  { rung: 'ownership', id: 'own-or-rent', job: 'YETI: make the film, or put your name on somebody else\'s?',
-    lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'],
-    // "Did more for YETI" rather than "leaves YETI with the audience afterwards", which stated the
-    // verdict before the pick. Raised in independent review 1, item F11.
-    sides: ['yetiFilm', 'pbrSponsor'], winner: 'yetiFilm', measure: 'did more for YETI',
+    cite: 'Tom Langan, Where the Rubber Meets The Restaurant, 10 June 2026', url: 'https://www.linkedin.com/pulse/where-rubber-meets-restaurant-tom-langan-gllme' },
+  { rung: 'ownership', id: 'own-or-rent', lens: ['Give Without Expectation', 'It\'s Not About You. It\'s About Them.'], sides: ['yetiFilm', 'pbrSponsor'], winner: 'yetiFilm',
     quote: 'PBR makes the film and owns the channel it sits on. YETI Presents started in 2015, two years before the sponsorship resumed.',
-    cite: 'PBR, 17 May 2026, and Front Office Sports, October 2019', url: 'https://www.youtube.com/watch?v=6ti-Ky0zYhA',
-    why: { question: 'Both are YETI. Why does the film do more for YETI in the long run?', options: [
-      { side: 'yetiFilm', text: 'It sits on a channel YETI owns, so the audience it brings in is YETI\'s to keep.' },
-      { side: 'pbrSponsor', text: 'A sponsorship puts the name in front of a crowd that has already gathered.' },
-      { side: 'pbrSponsor', text: 'Naming an award costs less than producing a documentary.' } ] } }
+    cite: 'PBR, 17 May 2026, and Front Office Sports, October 2019', url: 'https://www.youtube.com/watch?v=6ti-Ky0zYhA' }
 ];
 
+// Interface and closing copy, as reviewed and receipted on 14 September. cards.json may override a key.
 const COPY = {
   brand: 'Talex Media',
   eyebrow: 'A choose your own adventure case study · draft for Tom',
   title: 'Which one worked?',
   lead: 'Each of the four rounds shows one company two ways. Pick the one that worked, then say why.',
-  // Cut to the question alone, an exact extract. The full quote goes on to call the other approach
-  // "a commercial and calling it content", which judges the losing sides before round one starts.
   gate: '"If you stripped your name and your product off this piece of content, would anyone still want to watch it?"',
   gateCite: 'Tom Langan, What\'s 100 Years Old is New Again, 22 May 2026',
   gateUrl: 'https://www.linkedin.com/pulse/whats-100-years-old-new-again-tom-langan-6bm2e',
@@ -198,12 +95,6 @@ const COPY = {
   medalNames: ['Gold', 'Silver'],
   tiers: [ { from: 8, name: 'Perfect read' }, { from: 6, name: 'Sharp eye' }, { from: 0, name: 'First look' } ],
   logRight: 'called it', logMissed: 'missed it', reasonRow: 'Reason', recordPick: 'Pick',
-  // The four rounds add up to one sentence in the viewer's own head. Tom, on the call: the viewer
-  // should end at "what we really want is to own our own episodic series that's entertaining for
-  // our audience, that is tied to our brand, that we have control over and that people will come
-  // back to watch over and over and over again." Line 2 carries Tom and Evan's point that the
-  // audience grows fond of a cast. It says "a new cast every time" rather than "a line", because
-  // since round 2 became Allstate the page no longer shows a repeating line. Review 1, item F1.
   synthesisHeading: 'Put the four rounds together',
   synthesis: [
     'A series gives people a reason to come back. A single film does not.',
@@ -211,23 +102,68 @@ const COPY = {
     'People return for something they want to watch, not for something about the product.',
     'When you own the show, the audience is yours, not rented.'
   ],
-  // Evan, 11 September: put the four lessons back to the reader as a question about their own
-  // company, handing straight off to the ask. One rung per clause, in the order the rounds ran.
   synthesisClose: 'Could your company make a show that comes back every week or every month, with a format and a cast your audience gets to know? Could you make that show for your audience rather than about your company, and own it rather than rent space in somebody else\'s show?',
-  // The heading is Evan's wording and is kept. RULES.md bans a question the writer immediately
-  // answers, so the copy below is a conditional offer rather than an answer, and the conflict is
-  // recorded for Evan in review/. The earlier "Most companies" line claimed a quantity with no source.
+  // The heading is Evan's wording, kept by his decision on 14 September.
   cta: { heading: 'Do you have the team to make it?', copy: 'If you have the idea but not the team to make it, Talex is the team.', button: 'Book A Call With Our Team', url: 'https://calendly.com/talextom/20-min-discovery-call' },
   share: 'Send this to a colleague', shared: 'Link copied', startOver: 'Start over',
   sample: 'Every film plays on the page, and each card names where its figures came from. Draft: the why-answers are not yet approved by Tom.',
   ordinals: ['first', 'second']
 };
 
+// ---- Apply the editorial decisions from cards.json, word for word ------------------------------
+const cardsPath = path.join(__dirname, 'cards.json');
+if (!fs.existsSync(cardsPath)) { console.error('BUILD REFUSED: cards.json is missing. It holds the editorial decisions.'); process.exit(1); }
+const cards = JSON.parse(fs.readFileSync(cardsPath, 'utf8'));
+const missing = [];
+const SIDE_FIELDS = ['caption', 'scale', 'title', 'spec', 'stats', 'note'];
+Object.keys(SIDES).forEach((k) => {
+  const c = cards.sides && cards.sides[k];
+  if (!c) { missing.push('sides.' + k); return; }
+  SIDE_FIELDS.forEach((f) => { if (c[f] === undefined || c[f] === '') missing.push('sides.' + k + '.' + f); });
+  if (missing.length) return;
+  SIDES[k].video.caption = c.caption;
+  SIDES[k].scale = c.scale;
+  SIDES[k].title = c.title;
+  SIDES[k].spec = c.spec;
+  SIDES[k].stats = c.stats;
+  SIDES[k].note = c.note;
+  // Optional: the side's name, as it reads inside "You picked {pick}" and "About {name}".
+  if (c.name !== undefined) SIDES[k].name = c.name;
+});
+Object.keys(cards.sides || {}).forEach((k) => { if (!SIDES[k]) missing.push('unknown side in cards.json: ' + k); });
+ROUNDS.forEach((r) => {
+  const c = (cards.rounds || []).find((x) => x.id === r.id);
+  if (!c) { missing.push('rounds.' + r.id); return; }
+  ['job', 'measure', 'whyQuestion', 'options'].forEach((f) => { if (c[f] === undefined || c[f] === '') missing.push('rounds.' + r.id + '.' + f); });
+  r.job = c.job;
+  r.measure = c.measure;
+  r.why = { question: c.whyQuestion, options: c.options };
+});
+// Copy overrides. roundNQuote and roundNCite address a round; any other key must already exist in COPY,
+// so a mistyped key fails loudly instead of silently changing nothing.
+Object.keys(cards.copy || {}).forEach((key) => {
+  const m = key.match(/^round([1-4])(Quote|Cite)$/);
+  if (m) { ROUNDS[+m[1] - 1][m[2].toLowerCase()] = cards.copy[key]; return; }
+  // synthesisLineN replaces one line of the closing synthesis, counted from 1.
+  const sl = key.match(/^synthesisLine([1-9])$/);
+  if (sl) {
+    const i = +sl[1] - 1;
+    if (i >= COPY.synthesis.length) { missing.push('copy key points past the end of the synthesis: ' + key); return; }
+    COPY.synthesis[i] = cards.copy[key]; return;
+  }
+  if (!(key in COPY)) { missing.push('copy key not recognised: ' + key); return; }
+  COPY[key] = cards.copy[key];
+});
+if (missing.length) {
+  console.error('BUILD REFUSED: cards.json is incomplete or has keys the build does not know:');
+  missing.forEach((x) => console.error('  - ' + x));
+  process.exit(1);
+}
+
+// ---- Gate, write, stamp ------------------------------------------------------------------------
 const head = [
-  '/* Every word the page shows lives in this file.',
-  '   Sides marked fromLibrary are copied byte for byte from ProspectAudit/templates/format-blocks.json by build-content.js.',
-  '   Never edit those here. Edit the live card, re-extract, run build-content.js again.',
-  '   Everything else is authored text with verbatim quotes from the source named in each round. */',
+  '/* Every word the page shows lives in this file. Generated by build-content.js from cards.json; do not edit by hand.',
+  '   Every card is written for this lead magnet. Nothing is imported from the strategy-doc block library. */',
   ''
 ].join('\n');
 

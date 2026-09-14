@@ -2,56 +2,57 @@
   "artifact": "ReverseLeadMagnet/v10-legendeering-ladder/copy-deck.md",
   "profile": "public",
   "decided": "2026-09-14",
+  "basis": "Rewritten against the copy built from Fable's revision after independent review, 14 September 2026 (content.js?v=86c90373eb, after the final review). Every instance behind each warning was listed by a probe that uses the linter's own sentence split, and each reason covers the instances in the current text.",
   "warnings": [
     {
       "id": "9dc6dc989b91",
       "rule": "quantifier needs scope check: all",
-      "reason": "Two instances. '940K Views, All Episodes' is locked text copied word for word from the approved Rico's Tacos block. 'cheap enough to run all year' is a distractor answer the page marks as wrong, a hypothetical rather than a factual claim."
+      "reason": "One instance: 'A thirty-second cartoon costs little enough to run all year.' It is a wrong answer option in round 3, an argument the page presents and then rejects, not a factual claim."
     },
     {
       "id": "8ce3cf58282f",
       "rule": "quantifier needs scope check: every",
-      "reason": "'Every film is real and plays on the page' was checked true: all eight film ids returned HTTP 200 from YouTube oEmbed on 14 September 2026. 'every week or every month' sits inside a question to the reader. 'a new joke every time' describes the format of Red Bull's cartoon series and is scoped to that series."
+      "reason": "'Every reader-visible string' is the copy deck's generated header, not on the page. 'Every film plays on the page' was checked true: all eight film ids returned HTTP 200 from YouTube oEmbed on 14 September 2026. 'far below every other episode' was checked against the playlist read on 14 September 2026. 'every spot we checked' is scoped to the spots checked, and all six Check First films on Allstate's channel (Swim Meet, Superstitious and Outfit, each at :30 and :15) open their description with 'Checking first is smart.' 'A fresh cast in every spot' and 'A campaign name that repeats in every spot' are wrong answer options; the campaign name Check First is in every upload's title. 'A new cast every time' is the synthesis stating the principle in general terms. 'every week or every month' sits inside a question to the reader."
     },
     {
       "id": "e7ea6dec6af3",
       "rule": "quantifier needs scope check: both",
-      "reason": "Each 'both' was checked against its cards: both Red Bull films are on Red Bull's own channel; both round four films are YETI's; both Mayhem measures rank him against other insurers' mascots, which the note states. All true."
+      "reason": "Each checked true. 'Both are P&G': P&G makes the Tide film and makes Rico's Tacos with Albertsons Media Collective and Minivela, as the card states. 'Both rank Mayhem against other insurers' mascots': MarketCast and Insurity each compare mascots across insurers. 'Allstate makes both': both films are on Allstate's own channel. 'Both films in this round sit on Red Bull's own channel' (twice) and 'Both films are Red Bull, on the same channel': both ids are on Red Bull's channel. 'Both are YETI': the YETI Presents film is YETI's, and the award is YETI's sponsorship."
     },
     {
       "id": "cf508c67264c",
       "rule": "quantifier needs scope check: each",
-      "reason": "'each one a single company' is true by construction and enforced by the build. 'each card names where its figures came from' was checked against all eight notes. 'a new cast in each film' describes Allstate's Check First campaign and is scoped to it."
-    },
-    {
-      "id": "cca84dd92a31",
-      "rule": "quantifier needs scope check: never",
-      "reason": "The only instance is 'a one off never does', inside a verbatim quotation from Tom Langan, Welcome to The Taco Drama, 30 July 2026. Quoted text keeps its exact wording."
-    },
-    {
-      "id": "fe84cacb4383",
-      "rule": "paragraph or sentence opens with a potentially ambiguous pronoun",
-      "reason": "Flagged on the copy deck's own header, which is generated scaffolding and never appears on the page. No reader-visible sentence opens with an ambiguous pronoun; the synthesis line that did was rewritten to open with 'People'."
-    },
-    {
-      "id": "c27b50bfcb1e",
-      "rule": "land/own may be a figurative verb",
-      "reason": "Every 'own' on this page is literal ownership, which is the subject of round four: a channel YETI owns, a show the reader would own rather than rent, PBR owning its own coverage. No figurative use. No 'land' appears except 'Felix landed' inside a verbatim Tom Langan quotation, where it is literal."
-    },
-    {
-      "id": "3fc95ca15698",
-      "rule": "two consecutive short sentences",
-      "reason": "Triggered by interface labels such as 'You called it.' and 'Right.', which render as separate controls and status lines rather than as consecutive sentences in running prose."
-    },
-    {
-      "id": "38af6dabab36",
-      "rule": "long sentence",
-      "reason": "The sentence is in the Rico's Tacos source note, which is copied word for word from the approved block library and locked. A block is only changed by editing the live card and re-extracting it, never on this page."
+      "reason": "'Each of the four rounds shows one company two ways' is true by construction and enforced by the build. 'each card names where its figures came from' was checked against all eight source notes. '49,000+ Views On Each Episode From Episode 11 On' was checked against the playlist read on 14 September 2026. 'a new cast each time' (headline) describes the campaign's approach; a 15-second cut of the same spot is not a new time. 'A different cast in each spot we checked', 'New cast In Each Spot We Checked' and 'Different people in each of the Check First spots we checked' are scoped to the three spots checked, and were checked against YouTube's three published stills for each of the six Check First uploads (review/evidence/): the people differ across Swim Meet, Superstitious and Outfit. 'Each spot is published as a 30-second film and a 15-second cut' was checked on Allstate's channel on 14 September 2026: Swim Meet (I6QksAqf0jk, x6Z93D-HTJY), Superstitious (0bNDXPzc100, YUHMBxlSr2M) and Outfit (oalJ2-bFETI, H7iqxlZw9c0), and the same stills show the same cast in both cuts of each spot. 'each new spot' in the round 2 answer is a general statement about a recurring character. 'whose channel each one sits on' is scoped to the two films in round 4."
     },
     {
       "id": "72862775784a",
       "rule": "quantifier needs scope check: only",
-      "reason": "The only instance is \"second only to Jake from State Farm\" in round 2. Checked true against the source: Insurity, via Business Wire on 7 March 2024, put Jake from State Farm first at 34 percent and Allstate's Mayhem second at 31 percent, so exactly one mascot ranked above Mayhem. Added in response to independent review 1, item F12, so the 31 percent does not read as a first place."
+      "reason": "One instance: 'second only to Jake from State Farm at 34 percent'. Checked true against the Insurity release on Business Wire, 7 March 2024: Jake from State Farm 34 percent, Allstate's Mayhem 31 percent, from an online survey in January 2024 of more than 1,000 randomly selected US adults."
+    },
+    {
+      "id": "cca84dd92a31",
+      "rule": "quantifier needs scope check: never",
+      "reason": "One instance: 'a one off never does', inside a verbatim quotation from Tom Langan, Welcome to The Taco Drama, 30 July 2026. Quoted text keeps its exact wording."
+    },
+    {
+      "id": "fe84cacb4383",
+      "rule": "paragraph or sentence opens with a potentially ambiguous pronoun",
+      "reason": "Four instances. Three are the principle name 'It's Not About You. It's About Them.', where the regex reads 'It's' as a pronoun opener; the name is Legendeering's, and Evan kept it on 14 September 2026. The fourth is 'They didn't gate it behind a sign-up. They didn't cut away...', a verbatim quotation from Tom Langan, Where the Rubber Meets The Restaurant, 10 June 2026; the headline and cards above it name Red Bull, and quoted text keeps its exact wording."
+    },
+    {
+      "id": "c27b50bfcb1e",
+      "rule": "land/own may be a figurative verb",
+      "reason": "Every 'owns' and 'own' used as a verb is literal ownership, the subject of round 4: 'YETI Owns The Channel', 'PBR Owns The Channel', 'a channel YETI owns', 'PBR ... owns the channel that film sits on', 'YETI makes A Thousand Casts and owns the channel that film sits on', 'When you own the show', 'own it rather than rent space'. Every other 'own' is the possessive adjective ('Tide's own channel', 'Allstate's own commercials', 'its own blog', 'PBR's own coverage') or a fixed phrase ('choose your own adventure', 'for its own sake', 'on its own'). 'Landing screen' is the deck's section heading, not on the page. 'Felix landed' is literal, inside a verbatim Tom Langan quotation."
+    },
+    {
+      "id": "8899ee5ff2cf",
+      "rule": "long sentence",
+      "reason": "The linter reports only the longest sentence, the Stratos source note at 34 words including its 5-word deck label. Writing/profiles/public-general.md says not to score source notes as published prose. The probe then listed every sentence over 25 words: stats rows are pipe-joined label cells, which the profile treats as separate units; the Rico's Tacos source note is a source note; option A of round 3 and the closing question are 24 and 25 words without their deck labels. The 30-word round 2 sentence held at the previous adjudication was split by Fable after the independent review."
+    },
+    {
+      "id": "3fc95ca15698",
+      "rule": "two consecutive short sentences",
+      "reason": "The linter reports the first pair it meets, which the probe identified as the copy deck's title line '# Which one worked? One company, two ways'. That line is the deck's generated heading. On the page, 'Which one worked?' is the landing title, a heading, and the profile treats headings and labels as separate units. The interface labels 'You called it.' and 'Right.' are status lines that render as separate controls, not as running prose."
     }
   ]
 }

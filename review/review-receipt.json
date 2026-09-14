@@ -1,12 +1,12 @@
 {
   "schema": 2,
   "artifact": "C:\\Users\\evane\\OneDrive\\Documents\\Claude\\Talex\\ReverseLeadMagnet\\v10-legendeering-ladder\\copy-deck.md",
-  "sha256": "eb614ab73ce2951f64af6d6ccd81163c40e7d4cb9d9d32d0fc3e7e6a2467411c",
+  "sha256": "8e71ce95990642918e5f35682dfa319f8abc64ea1eeb41b4da0336142e8c7be7",
   "profile": "public",
-  "writer": "Claude Opus 5, build session",
-  "reviewer": "Claude Fable 5.1, three fresh independent contexts",
-  "review_file": "C:\\Users\\evane\\OneDrive\\Documents\\Claude\\Talex\\ReverseLeadMagnet\\v10-legendeering-ladder\\review\\review-record-2026-09-14.md",
-  "review_sha256": "477e0dbfb2b6e44ea9f2c20126cd116d9ba29969bd04eb10629962cd0a541203",
-  "reviewed_at": "2026-09-14T15:36:29.554771+00:00",
+  "writer": "Claude Fable 5.1, card decisions context a567418dca92ae560",
+  "reviewer": "Claude Fable 5.1, three fresh independent review contexts (aba19ad935134c46e, af7a5cc961492da65, ace34726df361b42f)",
+  "review_file": "C:\\Users\\evane\\OneDrive\\Documents\\Claude\\Talex\\ReverseLeadMagnet\\v10-legendeering-ladder\\review\\review-record-fable-cards-2026-09-14.md",
+  "review_sha256": "e8002fa6ac23bced08fe5fcb86c6603edda500714ae64dc6edceefc1b265e55c",
+  "reviewed_at": "2026-09-14T19:25:10.233328+00:00",
   "authority": "Writing/README.md@2026-09-11.2"
 }

@@ -32,9 +32,36 @@ const TELLS = [
   'drinks the product', 'what happens to them', 'the same faces'
 ];
 
+// Strategy-doc language that has no place on a lead magnet. Evan, 14 September 2026: "This is not a
+// strategy doc. This is a lead magnet which is designed to show the principles of Legendeering in an
+// interactive way." These are the block library's own labels and runtime classes, which a prospect
+// playing the game would not understand and which explain nothing about the round.
+// Deliberately not banned: "Taco Drama", because "Welcome to The Taco Drama" is the title of Tom's own
+// newsletter edition and a source note may cite it; and "Episode length", which is plain English for a
+// series. The ban is for jargon, not for ordinary words the block library also happened to use.
+const STRATEGY_DOC_TERMS = [
+  'a company that did it', 'entertainment reference', 'long-form episodic', 'short-form episodic',
+  'mid-form', 'premium long-form', '(aka '
+];
+
 function check(SIDES, ROUNDS, COPY, lib) {
   const problems = [];
   const fail = (m) => problems.push(m);
+
+  // No card on this page is imported from the strategy-doc block library. A block was written to pitch a
+  // format to one prospect; a card here has to explain one Legendeering principle. Same instruction.
+  Object.keys(SIDES).forEach((k) => {
+    if (SIDES[k].fromLibrary) fail('side "' + k + '" is imported from the strategy-doc block library. Write the card for this page instead.');
+    const s = SIDES[k];
+    const visible = [s.scale, s.title, s.note, s.video && s.video.caption]
+      .concat((s.spec || []).map((row) => row[0] + ' ' + row[1]))
+      .concat((s.stats || []).map((row) => row[0] + ' ' + row[1]))
+      .join(' ').toLowerCase();
+    STRATEGY_DOC_TERMS.forEach((t) => {
+      if (visible.indexOf(t) !== -1) fail('side "' + k + '" uses strategy-doc language: "' + t + '"');
+    });
+    if (!s.stats || s.stats.length !== 3) fail('side "' + k + '" needs exactly three stats; the reveal lays them out in a row of three');
+  });
 
   // The page shipped once with source notes and film captions sitting in the data and never being
   // drawn, while the landing screen told the viewer every film "links to its source". The data

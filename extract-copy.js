@@ -59,8 +59,21 @@ p('Closing question', C.synthesisClose);
 p('Call to action heading', C.cta.heading); p('Call to action copy', C.cta.copy); p('Call to action button', C.cta.button);
 
 h('Interface labels');
-['lock', 'calledWinner', 'missedWinner', 'whyStep', 'whyLead', 'choose', 'whyRight', 'whyWrong', 'takeawayLabel', 'sourceLabel', 'approval', 'seeResult', 'share', 'print', 'startOver']
-  .forEach((k) => p(k, C[k]));
+// Every COPY key the engine reads, taken from index.html itself so the deck cannot miss one.
+// Keys already printed above, and values that are not words (a URL, a score threshold), are skipped.
+const engine = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+const printed = ['eyebrow', 'title', 'lead', 'gate', 'gateCite', 'sample', 'start', 'pickLead', 'pickInstruction',
+  'resultHeading', 'resultHigh', 'resultLow', 'synthesisHeading', 'synthesis', 'synthesisClose', 'cta', 'gateUrl', 'highFrom'];
+[...new Set([...engine.matchAll(/\bC\.([A-Za-z0-9_]+)/g)].map((m) => m[1]))]
+  .filter((k) => !printed.includes(k))
+  .forEach((k) => {
+    const v = C[k];
+    if (v == null) return;
+    if (Array.isArray(v)) out.push('**' + k + ':** ' + v.map((x) => plain(x && x.name != null ? x.name : x)).join(' / '));
+    else p(k, v);
+  });
+p('Play button (screen readers)', 'Play {film label}, for example: Play ' + S[R[0].sides[0]].video.label);
+p('Round menu (screen readers)', 'Rounds');
 
 fs.writeFileSync(path.join(__dirname, 'copy-deck.md'), out.join('\n') + '\n', 'utf8');
 console.log('copy-deck.md written, ' + out.length + ' lines');
